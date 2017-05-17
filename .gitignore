@@ -1,0 +1,10 @@
+# global os stuff
+.DS_Store
+Thumbs.db
+.log
+.sql
+.sass-cache/
+.codekit-config.json
+
+# project stuff
+misc

@@ -118,8 +118,35 @@
     <!-- cleanup temp -->
     <delete dir="temp/2011-05/"/>
   </target>
+  
+  <target name="2010-05">
+    <!-- create assets directories -->
+    <mkdir dir="temp/2010-05/" />
+    <mkdir dir="assets/music-encoding/2010-05/schemata/"/>
+    <mkdir dir="assets/music-encoding/2010-05/guidelines/"/>
+    <!-- get source to temp -->
+    <get verbose="on" src="https://github.com/music-encoding/music-encoding/archive/MEI_release_2010-05.zip" dest="temp/2010-05/"/>
+    <!-- unzip schemata -->
+    <unzip src="temp/2010-05/MEI_release_2010-05.zip" dest="assets/music-encoding/2010-05/schemata/">
+      <patternset>
+        <include name="**/rng/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- unzip guidelines -->
+    <!-- no guidelines exist in this release -->
+    <unzip src="temp/2010-05/MEI_release_2010-05.zip" dest="assets/music-encoding/2010-05/guidelines/">
+      <patternset>
+        <include name="**/documentation/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- cleanup temp -->
+    <delete dir="temp/2010-05/"/>
+  </target>
 
   <target name="frameworks.init">
+    <antcall target="2010-05"/>
     <antcall target="2011-05"/>
     <antcall target="v2.0.0"/>
     <antcall target="v2.1.1"/>

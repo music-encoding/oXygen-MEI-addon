@@ -1,4 +1,6 @@
-# global os stuff
+###################
+# global os stuff #
+###################
 .DS_Store
 Thumbs.db
 .log
@@ -6,5 +8,9 @@ Thumbs.db
 .sass-cache/
 .codekit-config.json
 
-# project stuff
+#################
+# project stuff #
+#################
 misc
+temp
+assets

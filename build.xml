@@ -67,8 +67,34 @@
     <!-- cleanup temp -->
     <delete dir="temp/v2.1.1/"/>
   </target>
+  
+  <target name="v2.0.0">
+    <!-- create assets directories -->
+    <mkdir dir="temp/v2.0.0/" />
+    <mkdir dir="assets/music-encoding/v2.0.0/schemata/"/>
+    <mkdir dir="assets/music-encoding/v2.0.0/guidelines/"/>
+    <!-- get source to temp -->
+    <get verbose="on" src="https://github.com/music-encoding/music-encoding/archive/MEI2012_v2.0.0.zip" dest="temp/v2.0.0/"/>
+    <!-- unzip schemata -->
+    <unzip src="temp/v2.0.0/MEI2012_v2.0.0.zip" dest="assets/music-encoding/v2.0.0/schemata/">
+      <patternset>
+        <include name="*/schemata/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- unzip guidelines -->
+    <unzip src="temp/v2.0.0/MEI2012_v2.0.0.zip" dest="assets/music-encoding/v2.0.0/guidelines/">
+      <patternset>
+        <include name="*/guidelines/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- cleanup temp -->
+    <delete dir="temp/v2.0.0/"/>
+  </target>
 
   <target name="frameworks.init">
+    <antcall target="v2.0.0"/>
     <antcall target="v2.1.1"/>
     <antcall target="v3.0.0"/>
   </target>

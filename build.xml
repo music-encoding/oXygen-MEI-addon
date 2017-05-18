@@ -13,6 +13,10 @@
     <delete dir="${build.dir}"/>
   </target>
   
+  <target name="clean.assets">
+    <delete dir="assets/"/>
+  </target>
+  
   <target name="get-local-git-revision">
     <description>Get the current git revision</description>
     <exec executable="git" outputproperty="local.revision">
@@ -33,8 +37,34 @@
     <get verbose="on" src="https://github.com/music-encoding/music-encoding/releases/download/v3.0.0/MEI_Guidelines_v3.0.0.pdf" dest="assets/music-encoding/v3.0.0/guidelines/"/>
     <delete dir="temp/v3.0.0/"/>
   </target>
-  
+
+  <target name="v2.1.1">
+    <!-- create assets directories -->
+    <mkdir dir="temp/v2.1.1/" />
+    <mkdir dir="assets/music-encoding/v2.1.1/schemata/"/>
+    <mkdir dir="assets/music-encoding/v2.1.1/guidelines/"/>
+    <!-- get source to temp -->
+    <get verbose="on" src="https://github.com/music-encoding/music-encoding/archive/MEI2013_v2.1.1.zip" dest="temp/v2.1.1/"/>
+    <!-- unzip schemata -->
+    <unzip src="temp/v2.1.1/MEI2013_v2.1.1.zip" dest="assets/music-encoding/v2.1.1/schemata/">
+      <patternset>
+        <include name="*/schemata/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- unzip guidelines -->
+    <unzip src="temp/v2.1.1/MEI2013_v2.1.1.zip" dest="assets/music-encoding/v2.1.1/guidelines/">
+      <patternset>
+        <include name="*/guidelines/*"/>
+      </patternset>
+      <mapper type="flatten"/>
+    </unzip>
+    <!-- cleanup temp -->
+    <delete dir="temp/v2.1.1/"/>
+  </target>
+
   <target name="frameworks.init">
+    <antcall target="v2.1.1"/>
     <antcall target="v3.0.0"/>
   </target>
   

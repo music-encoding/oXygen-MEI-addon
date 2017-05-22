@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//Oxygen Plugin" "../plugin.dtd">
+<plugin 
+  id="de.bwbohl.oxygen-MEI-addon"
+  name="oXygen MEI addon"
+  description="@DESCRIPTION@"
+  version="@VERSION@"
+  vendor="Benjamin W. Bohl"
+  class="ro.sync.exml.plugin.Plugin"
+  classLoaderType="preferReferencedResources">
+  <extension type="WorkspaceAccessJS" href="wsAccess.js"/>
+</plugin>

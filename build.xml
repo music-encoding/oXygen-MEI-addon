@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="oXygen-MEI-addon" default="dist">
+  
+  <!-- import default properties from file -->
+  <property file="build.properties"/>
+  <property file="local.build.properties"/>
+  
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+  
+  <target name="get-local-git-revision">
+    <description>Get the current git revision</description>
+    <exec executable="git" outputproperty="local.revision">
+      <arg value="describe"/>
+      <arg value="--tags"/>
+      <arg value="--always"/>
+      <arg value="HEAD"/>
+    </exec>
+    <echo>Local revision: ${local.revision}</echo>
+  </target>
+  
+  <target name="dist">
+    <antcall target="get-local-git-revision"/>
+  </target>
+</project>

@@ -7,6 +7,7 @@
   
   <target name="init">
     <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>
   </target>
   
   <target name="clean">

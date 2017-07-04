@@ -14,6 +14,11 @@
     <delete dir="${build.dir}"/>
   </target>
   
+  <target name="reset">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
+  </target>
+  
   <target name="get-local-git-revision">
     <description>Get the current git revision</description>
     <exec executable="git" outputproperty="local.revision">

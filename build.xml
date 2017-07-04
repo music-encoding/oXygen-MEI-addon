@@ -37,6 +37,7 @@
   </target>
   
   <target name="dist" depends="clean,init,get-local-git-revision,load-license">
+    <property name="zip" value="${name.short}_${revision}.zip"/>
     <copy todir="${build.dir}" flatten="true" outputencoding="utf-8">
       <fileset dir="LICENSES" />
       <fileset dir="src">
@@ -45,9 +46,11 @@
       </fileset>
       <filterset>
         <filter token="NAME" value="${name}"/>
+        <filter token="ID" value="${name.short}"/>
         <filter token="DESCRIPTION" value="${description}"/>
         <filter token="VERSION" value="${revision}"/>
         <filter token="LICENSE" value="${license}"/>
+        <filter token="ZIP" value="${zip}"/>
       </filterset>
     </copy>
     <zip basedir="${build.dir}"  destfile="${dist.dir}/${name.short}_${revision}.zip"/>

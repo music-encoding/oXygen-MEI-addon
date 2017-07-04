@@ -48,7 +48,7 @@
         <filter token="NAME" value="${name}"/>
         <filter token="ID" value="${name.short}"/>
         <filter token="DESCRIPTION" value="${description}"/>
-        <filter token="VERSION" value="${revision}"/>
+        <filter token="VERSION" value="${version}"/>
         <filter token="LICENSE" value="${license}"/>
         <filter token="ZIP" value="${zip}"/>
       </filterset>

@@ -53,6 +53,7 @@
         <filter token="ZIP" value="${zip}"/>
       </filterset>
     </copy>
-    <zip basedir="${build.dir}"  destfile="${dist.dir}/${name.short}_${revision}.zip"/>
+    <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${zip}"/>
+    <copy file="build/extension.xml" todir="dist"/>
   </target>
 </project>

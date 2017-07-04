@@ -31,7 +31,20 @@
     <property name="revision" value="${local.revision}"/>
   </target>
   
-  <target name="dist">
-    <antcall target="get-local-git-revision"/>
+  <target name="dist" depends="clean,init,get-local-git-revision">
+    <copy todir="${build.dir}" flatten="true" outputencoding="UTF-8">
+      <fileset dir="LICENSES" />
+      <fileset dir="src">
+        <include name="**/**"/>
+        <exclude name="plugin"/>
+      </fileset>
+      <filterset>
+        <filter token="NAME" value="${name}"/>
+        <filter token="DESCRIPTION" value="${description}"/>
+        <filter token="VERSION" value="${revision}"/>
+        <filter token="LICENSE" value="${license}"/>
+      </filterset>
+    </copy>
+    <zip basedir="${build.dir}"  destfile="${dist.dir}/${name.short}_${revision}.zip"/>
   </target>
 </project>

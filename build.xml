@@ -7,10 +7,16 @@
   
   <target name="init">
     <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>
   </target>
   
   <target name="clean">
     <delete dir="${build.dir}"/>
+  </target>
+  
+  <target name="reset">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
   </target>
   
   <target name="get-local-git-revision">
@@ -22,9 +28,32 @@
       <arg value="HEAD"/>
     </exec>
     <echo>Local revision: ${local.revision}</echo>
+    <property name="revision" value="${local.revision}"/>
   </target>
   
-  <target name="dist">
-    <antcall target="get-local-git-revision"/>
+  <target name="load-license">
+    <loadfile srcfile="LICENSES/LGPL-3.0.txt" encoding="utf-8" property="license"/>
+    <echo>${license}</echo>
+  </target>
+  
+  <target name="dist" depends="clean,init,get-local-git-revision,load-license">
+    <property name="zip" value="${name.short}_${revision}.zip"/>
+    <copy todir="${build.dir}" flatten="true" outputencoding="utf-8">
+      <fileset dir="LICENSES" />
+      <fileset dir="src">
+        <include name="**/**"/>
+        <exclude name="plugin"/>
+      </fileset>
+      <filterset>
+        <filter token="NAME" value="${name}"/>
+        <filter token="ID" value="${name.short}"/>
+        <filter token="DESCRIPTION" value="${description}"/>
+        <filter token="VERSION" value="${version}"/>
+        <filter token="LICENSE" value="${license}"/>
+        <filter token="ZIP" value="${zip}"/>
+      </filterset>
+    </copy>
+    <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${revision}/${zip}"/>
+    <copy file="${build.dir}/extension.xml" todir="${dist.dir}/${revision}/"/>
   </target>
 </project>

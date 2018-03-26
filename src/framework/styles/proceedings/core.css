@@ -1,0 +1,428 @@
+@import url("../oxy.css");
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+@namespace xml "http://www.w3.org/XML/1998/namespace";
+
+confSubmission{/* body */
+  margin: 2em 4em 4em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+confSubmission:before{
+   content:"Note: This page is a preview of a submission for the Music Encoding Conference Proceedings. It is not the final publication.";
+   display: block;
+   margin: 0 0 1em 0;
+   background-color: #e5e5e5;
+   padding: 1em;
+   border-radius: .5em;
+   text-align: center;
+}
+
+title, title[type="main"]{/* h1 */
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 1em 0;
+  text-shadow: 0 .1em .3em rgba(0, 0, 0, 0.3);
+  /* add */
+  display: block;
+}
+div > head, confSubmission > abstract > head, confSubmission > biblList > head{ /* h2 */
+  font-size: 1.4em;
+  margin: 2em 0 .5em 0;
+  text-transform: uppercase;
+  color: #333333;
+  text-shadow: 0 .1em .2em rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  /* add */
+  display: block;
+}
+div > div > head{ /* h3 */
+  font-size: 1.2em;
+  margin: 2em 0 .5em 0;
+  color: #333333;
+  text-shadow: 0 .1em .2em rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-style:italic;
+  /* add */
+  display: block;
+}
+div > div > div > head{/* h4 */
+  font-size: 1em;
+  margin: 2em 0 .2em 1em;
+  font-style: italic;
+  color: #333333;
+  text-shadow: 0 .1em .2em rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  /* add */
+  display: block;
+}
+p{
+  margin: .5em 0 .8em 1em;
+  /* add */
+  display: block;
+}
+term{ /* .term */
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+table{
+  border: none;
+  border-collapse: collapse;
+  margin: 1em 0 0 0;
+  /* add */
+  display:table;
+}
+tr + tr td{
+  border-top: .5px solid #999999;
+}
+td + td{
+  border-left: .5px solid #999999;
+}
+td{
+  padding: .5em;
+  vertical-align: top;
+}
+.error{
+  background-color: #ff4b4b;
+  padding: 0 .2em;
+}
+/*span.bold{
+  font-weight: bold;
+}*/
+*[rend~="bold"]{
+  font-weight: bold;
+}
+/*span.underline{
+  text-decoration: underline
+}*/
+*[rend~="underline"]{
+  text-decoration: underline;
+}
+/*span.italic{
+  font-style: italic;
+}*/
+*[rend~="italic"]{
+  font-style: italic;
+}
+/*span.smcaps{
+  font-variant: small-caps;
+}*/
+*[rend~="smcaps"]{
+  font-variant: small-caps;
+}
+/*span.strike{
+  text-decoration: line-through;
+}*/
+*[rend~="strike"]{
+  text-decoration: line-through;
+}
+/*span.sub{
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  bottom: -0.15em;
+}*/
+*[rend~="sub"]{
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  bottom: -0.15em;
+}
+/*span.sup{
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.3em;
+}*/
+*[rend~="sup"]{
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.3em;
+}
+/*span.fixed-width,
+pre{
+  font-family: 'Courier New', Courier, monospace;
+}*/
+*[rend~="fixed-width"]{
+  font-family: 'Courier New', Courier, monospace;
+}
+.footnote-ref{
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.3em;
+}
+.footnote{
+  position: relative;
+  margin: 0 0 1em 4em;
+}
+.footnote-backref{
+  position: absolute;
+  top: 0;
+  left: -2.5em;
+  color: #000000;
+  text-decoration: none;
+  font-size: .75em;
+  vertical-align: baseline;
+  top: -0.3em;
+}
+egXML{ /* pre */
+  background-color: #f5f5f5;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1em 0;
+  border-radius: .5em;
+  position: relative;
+  /* add */
+  display: block;
+  padding: 1em;
+  -oxy-display-tags: none;
+  white-space:pre-wrap !important;
+}
+
+egXML[valid="true"]:before{ /* pre.valid:before */
+  position: relative;
+  top: -1em;
+  left: -1em;
+/*  bottom: 0;*/
+  width: 1em;
+  background-color: #5dde5d;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+/*  display:block;*/
+  /* add */
+}
+
+egXML[valid="false"]:before{/* pre.invalid:before */
+  position: relative;
+  top: -1em;
+  left: -1em;
+  bottom: 0;
+  width: 1em;
+  background-color: #de625d;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+}
+egXML[valid="feasible"]:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1em;
+  background-color: #5db5de;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+}
+.blockquote{
+  margin: 1.5em 2em 2em;
+  font-size: .9em;
+}
+.equation,
+.fig{
+  margin: 1em 0 0 0;
+}
+img{ /* img */
+  max-width: 100%;
+}
+caption{ /* .caption */
+  font-size: .9em;
+  font-style: italic;
+  margin: 0 0 1.5em 0;
+}
+li{
+  margin: 0 0 .3em 0;
+  /* add */
+  display: list-item;
+}
+
+/* add */
+
+titlePart{
+  display:block;
+}
+
+titlePart:after{
+  content: ". ";
+}
+
+titlePart[type="subordinate"]{
+  font-weight: normal;
+}
+
+authorList{
+/*  display: table;*/
+/*  display:block;*/
+  width: 100%;
+  height: 110px;
+}
+authorData{
+  border-collapse: collapse;
+  border-left-color: rgb(153, 153, 153);
+  border-left-style: solid;
+  border-left-width: 0.5px;
+  color: rgb(0, 0, 0);
+/*  display: table-cell;*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  height: 55px;
+  line-height: 18px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  text-align: left ;/* start */
+  vertical-align: top;
+  white-space: normal;
+  /* add */
+/*  display: block;*/
+/*  width: 48%;*/
+/*  float: left;*/
+/*  clear: none;*/
+}
+
+authorName{
+  display: block;
+  font-weight: bold;
+}
+
+affiliation {
+display: block;
+}
+
+email{
+  display: block;
+/*  content: oxy_textfield(
+          edit, '@my_attr',
+          columns, 40);*/
+    color: rgb(0, 0, 238);
+    text-decoration: underline;
+}
+authorName > famName + foreName:before{
+  content: ", ";
+}
+
+list {
+  display: block;
+  margin: .3em 0 .3em 2em;
+}
+
+list[form="marked"] li{
+  list-style:disc !important;
+}
+/*list[form="ordered"]{
+  counter-reset: li 0;
+}*/
+list[form="ordered"] li{
+  list-style:decimal !important;
+}
+/*list[form="ordered"] li:before{
+  counter-increment: li;
+  content: counter(li) '.  ';
+}*/
+list[form="simple"]{
+  margin: .3em 0 .3em 1em;
+}
+list[form="simple"] li{
+  list-style:none !important;
+}
+
+*[target]{
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  -oxy-link: attr(target);
+  link: attr(target);
+  content: "⬈";
+}
+
+bibl{
+  display: block;
+  margin: .3em 0 .3em 0em;
+}
+
+bibl:before{
+  content: "[" attr(xml|id) "] ";
+  text-transform: uppercase;
+}
+
+bibl[target]{
+  display: inline;
+  content: attr(target);
+  text-transform: uppercase;
+  link: "#" attr(target) !important;
+  -oxy-link: "#" attr(target);
+}
+
+bibl[target]:before{
+  content: "[";
+}
+
+bibl[target]:after{
+  content: "] ";
+}
+
+ref{
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  link: oxy_xpath("normalize-space(./text())");
+  content: "⬈";
+}
+/*ref:before{
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  content: "$";
+  -oxy-link: oxy_xpath(.);
+  link: oxy_xpath(.);
+}*/
+
+/*ref[target]:before{
+  content: none;
+}*/
+/*
+ref[target]:before{
+content: "ICON";
+ -oxy-link: attr(target);
+  link: attr(target) !important;
+}*/
+
+/* oXygen stuff */
+/*oxy|error {
+    display:-oxy-morph !important;
+    -oxy-editable:false !important;
+    white-space:pre !important;
+    font-weight:bold !important;
+    color: rgb(178, 0, 0) !important;
+    -oxy-display-tags: none;
+}
+
+oxy|comment {
+  display:none !important;
+    /\*display:morph !important;
+    color: rgb(0, 100, 0) !important;
+    background-color:rgb(255, 255, 210) !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;*\/
+}
+
+oxy|processing-instruction {
+    display:-oxy-morph !important;
+    color: rgb(139, 38, 201) !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;
+}
+
+oxy|processing-instruction[bazga]{
+  display:inline !important;
+  color:purple !important;
+    background-color:transparent !important;
+}*/

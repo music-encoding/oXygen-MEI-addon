@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="mecProceedings_schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="mecProceedings_schema.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="mecProceedings.xsl"?>
+<confSubmission xmlns="http://www.music-encoding.org/ns/mei" version="0.05"
+  xmlns:ex="http://www.music-encoding.org/ns/mei/Examples"
+  xmlns:mei="http://www.music-encoding.org/ns/mei">
+  <title>PAPER AND POSTER TEMPLATE FOR THE MUSIC ENCODING CONFERENCE PROCEEDINGS</title>
+  <authorList>
+    <authorData>
+      <authorName>
+        <famName>Author</famName>
+        <foreName>First T.</foreName>
+      </authorName>
+      <affiliation>ABC State University</affiliation>
+      <email>author1@abc.edu</email>
+    </authorData>
+    <authorData>
+      <authorName>
+        <famName>Writer</famName>
+        <foreName>Bozo</foreName>
+      </authorName>
+      <affiliation>ABC State University</affiliation>
+      <email>bwriter123@abc.edu</email>
+    </authorData>
+    <authorData>
+      <authorName>
+        <famName>Jones IV</famName>
+        <foreName>John "Rudy"</foreName>
+      </authorName>
+      <affiliation>XYZ Corporation</affiliation>
+      <email>jonesjr@xyz.com</email>
+    </authorData>
+  </authorList>
+  <abstract>
+    <head>ABSTRACT</head>
+    <p>The abstract should consist of a single paragraph containing up to 1200 characters. Only the
+        <term>&lt;rend&gt;</term> and <term>&lt;term&gt;</term> elements are allowed. Other markup
+      is not permitted. The value of <term>&lt;head&gt;</term> for this section must match
+      "ABSTRACT" — no other characters, spaces, or punctuation signs are allowed.</p>
+  </abstract>
+  <div>
+    <head>INTRODUCTION</head>
+    <p>This template includes information regarding paper and poster markup for the Music Encoding
+      Conference proceedings. It can be downloaded from the Music Encoding Initiative web site (<ref
+        target="http://music-encoding.org/conference"
+      >http://music-encoding.org/conference</ref>).</p>
+    <p>You are encouraged to use an XML editor for your submission for the proceedings. There are
+      several available for download. For example, oXygen may be used for free for 30 days under an
+      evaluation license. The use of word-processing software, such as Word, LaTex, etc., is <rend
+        rend="bold">strongly</rend> discouraged. If you have limited experience with XML, please
+      contact us for help.</p>
+    <p>The marked-up paper and all accompanying images should be provided in a .ZIP file containing
+      a single directory.</p>
+  </div>
+  <div>
+    <head>MARKUP VS. STYLES</head>
+    <p>The goal of this template is uniformity of structure. When the submission's semantic features
+      are indicated instead of its graphical characteristics, consistent formatting can be
+      automatically applied during the production phase via style-sheets.</p>
+    <p>Therefore, for the most part visual styling should be avoided. When phrase-level styling like
+        <rend rend="bold">bolded</rend> or <rend rend="underline">underlined</rend> text is required
+      for readability, however, it can be indicated using the <term>&lt;rend&gt;</term> element and
+      an appropriate value for its <term>@rend</term> attribute. For example,</p>
+    <p>
+      <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+<![CDATA[<rend rend="bold">Bold text</rend>
+<rend rend="underline">Underlined text</rend>
+<rend rend="italic">Italic text</rend>
+<rend rend="smcaps">Text in small caps</rend>
+<rend rend="strike">Struck-through text</rend>
+text <rend rend="sup">Superscript</rend>
+text <rend rend="sub">Subscript</rend>
+<rend rend="fixed-width">Text in a fixed-width font</rend>
+<rend rend="bold underline italic">Multiple, space-separated values may be used when appropriate.</rend>]]>
+      </egXML>
+    </p>
+    <p>The <term>&lt;term&gt;</term> element may be used to mark descriptive words or phrases of a
+      technical nature, such as the names of XML elements and attributes; class, method, and
+      datatype names; and programming language reserved words. Technical terms will be rendered in a
+      fixed-width font. The use of <term>&lt;term&gt;</term> for these things is preferred over the
+        <term>&lt;rend&gt;</term> element.</p>
+    <p>URLs that are intended to be actionable must be marked using the <term>&lt;ref&gt;</term>
+      element. For example,</p>
+    <p>
+      <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="false"><![CDATA[
+<ref target="www.music-encoding.org">www.music-encoding.org</ref>
+<ref>www.music-encoding.org</ref>]]>
+      </egXML>
+    </p>
+    <p>The <term>@target</term> attribute holds the destination URL, but if it is not present, then
+      the content of the <term>&lt;ref&gt;</term> element will be used to create a URL. Therefore,
+      the examples above are equivalent. Submitters are <rend rend="bold">strongly encouraged</rend>
+      to <rend rend="bold">test all hyperlinks</rend>!</p>
+    <p>All submitted markup files must be validated against the MEC Proceedings schema. Files that
+      do not validate will be returned to the submitter for correction.</p>
+  </div>
+  <div>
+    <head>TEXT</head>
+    <div>
+      <head>Title and Authors</head>
+      <p>In the final publication the paper/poster title will be presented in all caps.</p>
+      <p>The lead author’s name should be listed first, followed by any co-authors’ names. Please
+        include an affiliation and email address for each author, even if this results in duplicate
+        addresses.</p>
+    </div>
+    <div>
+      <head>Text Length</head>
+      <p>Conference papers will be limited to 8 printed pages, while poster presentations will be
+        allowed 2 pages.</p>
+    </div>
+    <div>
+      <head>Page Numbering, Headers and Footers, Copyright Notice</head>
+      <p>Do not include headers, footers, page numbers, or copyright notice in your submission.
+        These will be added when the proceedings are assembled. The copyright notice will read as
+        follows:</p>
+      <p>"Permission to make digital or print copies of all or part of this work for personal or
+        classroom use is granted without fee provided that copies are not made or distributed for
+        profit or commercial advantage and that all copies bear this notice and a full citation on
+        the first page. © [year] Music Encoding Initiative"</p>
+    </div>
+    <div>
+      <head>Bibliographic References</head>
+      <p>Use <term>&lt;bibl&gt;</term> elements in the text for references to bibliographic items
+        listed in "WORKS CITED". For example, a reference to the journal article cited below can be
+        encoded as:</p>
+      <p>
+        <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+<![CDATA[In his 1921 magnum opus<bibl target="author"/> Artie Author states ...]]> 
+        </egXML>
+      </p>
+      <p>The value of the <term>&lt;bibl&gt;</term> element's <term>@target</term> attribute must
+        match the <term>@xml:id</term> of a work in the "Works Cited" section. References to cited
+        works will be labeled automatically.</p>
+      <p>If a reference is to a specific part of the work, a page or page range for example, then
+        record the specific information within a <term>&lt;biblScope&gt;</term> child of
+          <term>&lt;bibl&gt;</term>. For example,</p>
+      <p>
+        <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+<![CDATA[<bibl target="author"><biblScope unit="page" from="6"/></bibl>]]>
+        </egXML>
+      </p>
+      <p>The point at which the quoted material begins must be captured using the <term>@unit</term>
+        and <term>@from</term> attributes. If the quotation spans multiple units, its terminal point
+        can be captured using the <term>@to</term> attribute. The scope of the citation should not
+        be enclosed in parentheses, brackets, or other symbols — these will be supplied later.</p>
+    </div>
+  </div>
+  <div>
+    <head>HEADINGS</head>
+    <p>All headings should be captured using the <term>&lt;head&gt;</term> tag <rend rend="bold"
+        >inside the div to which they pertain</rend>. Styling will be applied based on the nesting
+      level of the heading. First level headings will be displayed as bold, capitalized text.</p>
+    <div>
+      <head>Second level headings</head>
+      <p>Second level headings will be displayed as bold text.</p>
+      <div>
+        <head>Third level headings</head>
+        <p>Third level headings will be displayed using italic text. Using more than three levels of
+          headings is highly discouraged.</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <head>NOTES AND FIGURES</head>
+    <div>
+      <head>Notes</head>
+      <p>Indicate notes in the text at the point of attachment; that is, where the note reference
+        (such as a superscript number) would normally appear, using the <term>&lt;annot&gt;</term>
+        element. For example:</p>
+      <p>
+        <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+<![CDATA[<p>This is the sentence to be annotated.<annot>The note goes inside the annot element.</annot></p>]]>
+        </egXML>
+      </p>
+      <p>Numbering of the notes is not necessary. Notes will be numbered automatically.</p>
+      <p>Notes must contain only in-line text and markup, NOT structual markup, such as paragraphs,
+        notes, lists, tables, etc.</p>
+    </div>
+    <div>
+      <head>Figures, Tables, Lists, XML Examples, Non-XML Program Code, and Equations</head>
+      <p>Figures, tables, XML examples, code listings, and equations do not require a label in the
+        form of "Figure 1.", etc. These features will be automatically and independently numbered.
+        References to these items should be capitalized, for example: "see Figure/Table/Example
+        1."</p>
+      <div>
+        <head>Figures</head>
+        <p>All artwork/digital images must be legible, and made available as separate JPEG or PNG
+          files. No art work should be hand-drawn. Lines should be very dark for the purposes of
+          reproduction. Reproductions of the proceedings may not be in color, and therefore all
+          figures and tables must make sense in black-and-white form. The caption element is
+          required even if it has no textual content. Please use it, as demonstrated below, to
+          provide a short, but meaningful description of the figure or table. </p>
+        <p>Use the <term>&lt;fig&gt;</term> element to place figures in the text as close to the
+          reference as possible. The value of the <term>&lt;graphic&gt;</term> element's
+            <term>@target</term> attribute, like the <term>@src</term> attribute on the
+            <term>&lt;img&gt;</term> tag in HTML, should be the file name of the image to be
+          displayed, including the file type extension. The file name <rend rend="bold">MUST
+            NOT</rend> be preceded by any directory path information, for example, "image01.png",
+          not "myFiles/picDirectory/image01.png".</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<p>
+  <fig>
+    <caption>My favorite.</caption>
+    <graphic target="figGraphic01.jpg"/>
+  </fig>
+</p>]]>
+          </egXML>
+        </p>
+        <p>In addition to images, <term>&lt;fig&gt;</term> can contain XML and non-XML code via
+            <term>&lt;egXML&gt;</term> and <term>&lt;programCode&gt;</term> elements, respectively.
+          Locating the example text within <term>&lt;fig&gt;</term> numbers the example within the
+          sequence of figures and provides an opportunity to associate a caption with it. See below
+          for more details on using <term>&lt;egXML&gt;</term> and
+          <term>&lt;programCode&gt;</term>.</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<fig>
+  <caption>Also my favorite.</caption>
+  <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+    <markup>
+      <otherStuff/>
+    </markup>
+  </egXML>
+</fig>]]>
+          </egXML>
+        </p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<fig>
+  <caption>This code works great!</caption>
+  <programCode>
+    <![CDATA[
+    Line 1
+    Line 2
+    Line 3
+    ]]​>
+  </programCode>
+</fig>]]>
+     </egXML>
+        </p>
+      </div>
+      <div>
+        <head>Tables</head>
+        <p>This template uses HTML-like table markup. As with figures, a caption is required.</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<table>
+  <caption>Table caption.</caption>
+  <tr>
+    <td>Row 1, column 1</td>
+    <td>Row 1, column 2</td>
+  </tr>
+  <tr>
+    <td>Row 2, column 1</td>
+    <td>Row 2, column 2</td>
+  </tr>
+</table>]]>
+          </egXML>
+        </p>
+      </div>
+      <div>
+        <head>Lists</head>
+        <p>This template uses HTML-like markup for lists. For example, a bulleted list may be
+          encoded like so:</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<list form="marked">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</list>]]>
+        </egXML>
+        </p>
+        <p>while a numbered list may be marked using:</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<list form="ordered">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</list>]]>
+        </egXML>
+        </p>
+      </div>
+      <div>
+        <head>XML Examples</head>
+        <p>Examples of XML encoding (not just MEI) should be marked using the
+            <term>&lt;egXML&gt;</term> element. Please note that the egXML element is in a different
+          namespace. The <term>@xmlns</term> attribute must appear on the <term>&lt;egXML&gt;</term>
+          element.</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true">
+  <measure>
+    <staff>
+      <layer>
+        <note/>
+      </layer>
+    </staff>
+  </measure>
+</egXML>]]>
+        </egXML>
+        </p>
+        <p>The XML contained within <term>&lt;egXML&gt;</term> is <rend rend="bold">NOT
+            VALIDATED</rend>. However, submitters are encouraged to use the <term>@valid</term>
+          attribute, seen in the example above, to indicate whether the example markup is intended
+          to be correct (true), contains intentional errors (false), or could be made valid by
+          adding certain elements and/or attributes (feasible).</p>
+      </div>
+      <div>
+        <head>Non-XML Program Code</head>
+        <p>Computer code other than XML must be contained within a <term>&lt;programCode&gt;</term>
+          element containing a CDATA section. The CDATA opening line <term>&lt;![CDATA[</term> and
+          closing line <term>]]&gt;</term> must completely enclose the example code. For
+          example:</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<programCode>
+  <![CDATA[
+  function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;  // 0! = 1! = 1
+    }
+    return n * factorial(n - 1);
+    }
+    
+    factorial(3); // returns 6
+  ]]​>
+</programCode>]]>
+        </egXML>
+        </p>
+      </div>
+      <div>
+        <head>Equations</head>
+        <p>Markup for equations is similar to that for figures. Equations must be provided as
+          graphical images — MathML and other forms of mathematical markup are not supported.</p>
+        <p>
+          <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<equation>
+  <caption>My latest theorem.</caption>
+  <graphic target="equationGraphic.png"/>
+</equation>]]>
+        </egXML>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <head>QUOTATIONS</head>
+    <p>Quotations that flow smoothly from the author's original words into those quoted occur within
+      a paragraph. For example:</p>
+    <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<p>Mr. Composer noted that <quote><rend rend="quotedbl">most of the notes in this composition are 
+  super melifluous and supercilious.</rend><bibl target="jones"><biblScope unit="page" from="6"/></bibl></quote>
+</p>]]>
+</egXML>
+    <p>Longer quotations appearing as a visually distinct section of the text have a
+        <term>&lt;div&gt;</term> as their parent. For example,</p>
+    <egXML xmlns="http://www.music-encoding.org/ns/mei/Examples" valid="true"><![CDATA[
+<div>
+  <p>...</p>
+  <quote>Lorem ipsum dolor sit amet, eius definitiones ad his, aliquam 
+    intellegam mei ex, amet dissentiunt te eos. Cu mea aeque mucius 
+    argumentum, mea unum veniam eirmod ea, cu iisque copiosae nominati 
+    ius. Quaeque prodesset consetetur quo at, ut magna utamur sensibus
+    sit, mea at partem pericula definiebas. Vix magna summo explicari 
+    ea, sea te labore quodsi. Ei nec adhuc interpretaris. No cum laudem 
+    inermis nominavi.<bibl target="smith"><biblScope from="1:19" unit="page"/></bibl>
+  </quote>
+  <p>...</p>
+</div>]]>
+    </egXML>
+    <p>Unless the <term>@block</term> attribute indicates otherwise, a quotation appearing as a
+      descendant of a paragraph will be rendered as in-line text, while a quotation occurring within
+      a division of the text will be rendered as a block-level element. Use of quotation marks must
+      be indicated using the <term>&lt;rend&gt;</term> element, as in the in-line quote example
+      above.</p>
+    <p>A quotation must contain an accompanying <term>&lt;bibl&gt;</term> element.</p>
+  </div>
+  <div>
+    <head>CITATIONS</head>
+    <p>The final section of the paper must contain all bibliographic citations, in MLA style, and in
+      alphabetical order by (first) author's surname. All cited works should be refered to in the
+      text. Each bibliographic citation should be uniquely labeled using its <term>@xml:id</term>
+      attribute, i.e., <term>&lt;bibl xml:id="builder"&gt;</term>. Citations in the "WORKS CITED"
+      section will be numbered automatically. The value of <term>&lt;head&gt;</term> for this
+      section must match "WORKS CITED" — no other characters, spaces, or punctuation signs are
+      allowed.</p>
+    <p>Citations should be for the complete item; that is, its full extent. A page range is required
+      for a book chapter, encyclopedia entry, journal article, or conference proceedings
+      citation.</p>
+    <p>For all bibliographic items in "WORKS CITED", use indirect order (Lastname, Firstname) for
+      the first author and direct order (Firstname Lastname) for second and third authors. Use the
+      principle author's name and "et al." when there are more than 3 authors.</p>
+    <p>Use "Volume.Issue (Year published)" notation for journal articles. The separator for volume
+      and issue information is a period. Publication year for articles should appear in
+      parentheses.</p>
+    <p>Dissertations and theses must be labeled as either "PhD Dissertation" or "Master's
+      Thesis".</p>
+    <p>Use an edition statement, e.g. "3rd ed." or "Revised ed.", for any edition of a bibliographic
+      item other than the first.</p>
+  </div>
+  <biblList>
+    <head>WORKS CITED</head>
+    <bibl xml:id="author">Author, Artie. "Journal Article," Journal Title Volume.Issue (Year
+      published): Inclusive page range.</bibl>
+    <bibl xml:id="builder">Builder, Bob and Cathy Creator. "Book Chapter Title." Book Title. City:
+      Publisher Name, Year published. Inclusive page range.</bibl>
+    <bibl xml:id="builder2">Builder, Bob, et al. "Conference Paper Title." 12th XYZ Conference.
+      Conference location, Date(s), Year of meeting. Inclusive page range.</bibl>
+    <bibl xml:id="college">College, Joe. "Dissertation Title." Awarding Institution, Year awarded.
+      PhD Dissertation.</bibl>
+    <bibl xml:id="dodger">Dodger, Artful. "Thesis Title." Awarding Institution, Year awarded.
+      Master's Thesis.</bibl>
+    <bibl xml:id="wordsmith">Wordsmith, William, Willy Makit, and Betty Dont. Book Title. 3rd ed.
+      City: Acme Publishers, Year published.</bibl>
+  </biblList>
+</confSubmission>

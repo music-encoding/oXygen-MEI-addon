@@ -1,0 +1,233 @@
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+@namespace xi "http://www.w3.org/2001/XInclude";
+@namespace xlink "http://www.w3.org/1999/xlink";
+@namespace svg "http://www.w3.org/2000/svg";
+@namespace mml "http://www.w3.org/1998/Math/MathML";
+
+oxy|document {
+    display:block !important;
+}
+
+oxy|cdata {
+    display:-oxy-morph !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;
+}
+
+oxy|processing-instruction {
+    display:-oxy-morph !important;
+    color: rgb(139, 38, 201) !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;
+}
+
+oxy|processing-instruction[Pub],
+oxy|processing-instruction[PubTbl],
+oxy|processing-instruction[xm-replace_text],
+oxy|processing-instruction[xm-deletion_mark],
+oxy|processing-instruction[xm-insertion_mark_start],
+oxy|processing-instruction[xm-insertion_mark_end],
+oxy|processing-instruction[xml-model],
+oxy|processing-instruction[xml-stylesheet]
+{
+    display:none !important;
+}
+
+oxy|comment {
+    display:-oxy-morph !important;
+    color: rgb(0, 100, 0) !important;
+    background-color:rgb(255, 255, 210) !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;
+}
+
+oxy|reference:before,
+oxy|entity[href]:before{  
+  link: attr(href) !important;
+  text-decoration: underline !important;
+  color: navy !important;
+  
+  margin: 2px !important;
+  padding: 0px !important;
+  margin-right:0px !important;
+  padding-right:2px !important;  
+}
+
+oxy|reference:before {
+  display: -oxy-morph !important;
+  content: url(../images/editContent.gif) !important;  
+}
+
+oxy|entity[href]:before{
+  display: -oxy-morph !important;
+  content: url(../images/editContent.gif) !important;
+}
+
+oxy|reference,
+oxy|entity {
+    -oxy-editable:false !important;
+    background-color: rgb(240, 240, 240) !important;
+    margin:0px !important;
+    padding: 0px !important;
+    
+}
+
+oxy|reference {
+    display:-oxy-morph !important;
+    /*EXM-28674 No need to present tags for these artificial references.*/
+    -oxy-display-tags: none;
+}
+
+oxy|entity {
+    display:-oxy-morph !important;
+}
+
+oxy|entity[name='amp'],
+oxy|entity[name='lt'],
+oxy|entity[name='gt'],
+oxy|entity[name='quot'],
+oxy|entity[name='apos']{
+    /*EXM-32236, EXM-37026 Do not present tags for 
+simple character entity references.*/
+    -oxy-display-tags: none;
+}
+
+oxy|entity[href] {
+  border: 1px solid rgb(175, 175, 175) !important;
+  padding: 0.2em !important;
+}
+
+xi|include {
+    display:-oxy-morph !important;
+    margin-bottom: 0.5em !important;
+    padding: 2px !important;
+}
+xi|include:before,
+xi|include:after{
+    display:inline !important;
+    background-color:inherit !important;
+    color:#444444 !important;
+    font-weight:bold !important;
+}
+
+xi|include:before {
+    content:url(../images/link.png) attr(href)  !important;
+    link: attr(href) !important;
+}
+xi|include[parse="text"]:before {
+    content:url(../images/link.png) !important;
+}
+xi|include[xpointer]:before {
+    content:url(../images/link.png) attr(href) " " attr(xpointer) !important;
+    link: oxy_concat(attr(href), "#", attr(xpointer)) !important;
+}
+
+xi|fallback {
+    display:-oxy-morph !important;
+    margin: 2px !important;
+    border: 1px solid #CB0039 !important;
+}
+
+xi|fallback:before {
+    display:-oxy-morph !important;
+    content:"XInclude fallback: " !important;
+    color:#CB0039 !important;
+}
+
+oxy|doctype {
+    display:block !important;
+    background-color: transparent !important;
+    color:blue !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 2px !important;
+}
+
+@media oxygen-high-contrast-black, oxygen-dark-theme{
+    oxy|doctype {
+        color:#D0E2F4 !important;
+    }
+}
+
+oxy|error {
+    display:-oxy-morph !important;
+    -oxy-editable:false !important;
+    white-space:pre !important;
+    font-weight:bold !important;
+    color: rgb(178, 0, 0) !important;
+    -oxy-display-tags: none;
+}
+
+oxy|error {
+    display:-oxy-morph !important;
+    -oxy-editable:false !important;
+    white-space:pre !important;
+    font-weight:bold !important;
+    color: rgb(178, 0, 0) !important;
+    -oxy-display-tags: none;
+}
+
+oxy|error:before {
+    content:url(../images/danger.png) "[" !important;
+    color: rgb(178, 0, 0) !important;
+}
+oxy|error[level='warn']:before {
+    content:url(../images/danger.png ) "[" !important;
+    color: rgb(200, 185, 0) !important;
+}
+
+oxy|error[level='warn'] {
+    color: rgb(200, 185, 0) !important;
+}
+
+oxy|error:after {
+    content:"]" !important;
+}
+
+
+*[xlink|href]:before {
+    content:url(../images/link.png);
+    link: attr(xlink|href) !important;
+}
+
+
+/*No direct display of the MathML and SVG images.*/
+svg|svg{	
+	display:inline !important;
+    white-space: -oxy-trim-when-ws-only !important;
+}
+
+svg|svg * {
+    display:none !important;
+    white-space:normal !important;
+}
+
+mml|math{	
+	display:inline !important;
+    white-space: -oxy-trim-when-ws-only !important;
+}
+mml|math mml|*{
+    display:none !important;
+    white-space: normal !important;
+}
+
+/*Text direction attributes*/
+*[dir='rtl'] { direction:rtl; unicode-bidi:embed; }
+*[dir='rlo'] { direction:rtl; unicode-bidi:bidi-override; }
+
+*[dir='ltr'] { direction:ltr; unicode-bidi:embed; }
+*[dir='lro'] { direction:ltr; unicode-bidi:bidi-override; }
+
+@media oxygen-high-contrast-black, oxygen-dark-theme{
+    xi|include:before,
+    xi|include:after{
+        color:#808080 !important;
+    }
+}
+

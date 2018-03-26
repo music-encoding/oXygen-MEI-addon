@@ -8,5 +8,5 @@
   vendor="Benjamin W. Bohl"
   class="ro.sync.exml.plugin.Plugin"
   classLoaderType="preferReferencedResources">
-  <extension type="WorkspaceAccessJS" href="wsAccess.js"/>
+  <extension type="WorkspaceAccessJS" href="oXygen-options/wsAccess.js"/>
 </plugin>

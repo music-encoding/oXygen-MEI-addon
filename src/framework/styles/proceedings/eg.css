@@ -1,0 +1,124 @@
+@namespace eg "http://www.music-encoding.org/ns/mei/Examples";
+
+/*FROM JTEI*/
+/* reset styles for all egXML content */
+/* alternative could be to namespace all other CSS templates 
+   to the TEI namespace, which could still be problematic  
+   for the default TEI stylesheets */
+eg|egXML *:before {
+  content: none;
+}
+eg|egXML *:after {
+  content: none;
+}
+eg|egXML *, eg|egXML *:before, eg|egXML *:after {
+  color: black;
+  font-weight: normal;
+  font-style: normal;
+  font-size: medium;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+  background: none;
+  background-color: transparent;
+}
+figure eg|egXML, figure eg {
+  border: solid 1px black;
+  padding: 0.5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  display: block;
+  white-space: pre-wrap;
+}
+eg|egXML eg|* {
+  margin-left: .5em;
+  text-align: left;
+  display: block;
+}
+eg|egXML *:before { 
+  content: "<" oxy_name() oxy_attributes() ">";
+}
+eg|egXML *:after { 
+  content: "</" oxy_name() ">"
+}
+eg|egXML oxy|comment {
+    display:block !important;
+    color:gray !important;
+    background-color:transparent !important;
+}
+eg|egXML oxy|comment:before {
+  content: "<!--";
+  color:gray;
+  background-color:transparent;
+}
+eg|egXML oxy|comment:after {
+  content: "-->";
+  color:gray;
+  background-color:transparent;
+}
+/*END FROM JTEI*/
+
+eg, eg|egXML{
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+eg|egXML{ /* pre */
+  background-color: #f5f5f5;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1em 0;
+  border-radius: .5em;
+  position: relative;
+  /* add */
+  display: block;
+  padding: 1em;
+  -oxy-display-tags: none;
+  white-space:pre-wrap !important;
+}
+
+eg|egXML[valid="true"]:before{ /* pre.valid:before */
+  position: relative;
+  top: -1em;
+  left: -1em;
+/*  bottom: 0;*/
+  width: 1em;
+  background-color: #5dde5d;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+/*  display:block;*/
+  /* add */
+}
+
+eg|egXML[valid="false"]:before{/* pre.invalid:before */
+  position: relative;
+  top: -1em;
+  left: -1em;
+  bottom: 0;
+  width: 1em;
+  background-color: #de625d;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+}
+eg|egXML[valid="feasible"]:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1em;
+  background-color: #5db5de;
+  content: ' ';
+  border-radius: .5em 0 0 .5em;
+}
+
+eg|egXML * {
+  font-weight: normal !important;
+  font-style: normal !important;
+  /*font-size: medium;*/
+  text-decoration: none !important;
+  position: static !important;
+  vertical-align: baseline !important;
+  bottom: 0 !important;
+}

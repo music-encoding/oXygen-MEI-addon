@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="2010-05">
+    <meihead>
+        <filedesc>
+            <titlestmt>
+                <title></title>
+            </titlestmt>
+            <pubstmt></pubstmt>
+        </filedesc>
+    </meihead>
+    <music></music>
+</mei>

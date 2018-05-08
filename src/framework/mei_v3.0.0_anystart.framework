@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serialized version="18.1" xml:space="preserve">
-	<serializableOrderedMap>
+	<map>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>MEI v3.0.0 mei-all-anyStart</String>
+						<String>MEI v3.0.0 anyStart</String>
 					</field>
 					<field name="schemaDescriptor">
 						<docTypeSchema>
@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/schemata/3.0.0/schemata/mei-all_anyStart.rng</String>
+								<String>${framework}/../music-encoding/v3.0.0/schemata/mei-all_anyStart.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -141,7 +141,9 @@
 						</authorExtension>
 					</field>
 					<field name="templatesLocations">
-						<String-array/>
+						<String-array>
+							<String>${frameworkDir}/templates/v3.0.0</String>
+						</String-array>
 					</field>
 					<field name="xmlCatalogs">
 						<String-array/>
@@ -160,6 +162,32 @@
 								</field>
 								<field name="fileName">
 									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>*</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>*</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>*</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>http://www.music-encoding.org/ns/mei</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*.mei</String>
 								</field>
 								<field name="publicID">
 									<String>*</String>
@@ -283,7 +311,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>file:/Users/bwb/oXygen_additional-frameworks/mei/schemata/3.0.0/schemata/mei-all_anyStart.rng</String>
+														<String>${framework}/../music-encoding/v3.0.0/schemata/mei-all_anyStart.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -294,13 +322,15 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>mei-all-anyStart v3.0.0</String>
+									<String>MEI 3.0.0 - anyStart</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
-						<null/>
+						<list>
+							<String>MEI 3.0.0 - anyStart</String>
+						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
 						<null/>
@@ -336,7 +366,7 @@
 						<null/>
 					</field>
 					<field name="priority">
-						<Integer>2</Integer>
+						<Integer>3</Integer>
 					</field>
 					<field name="xmlNodeCustomizerExtension">
 						<null/>
@@ -350,5 +380,5 @@
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</serializableOrderedMap>
+	</map>
 </serialized>

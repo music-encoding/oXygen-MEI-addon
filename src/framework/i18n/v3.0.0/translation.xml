@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation>
+   <languageList>
+      <language description="English" lang="en_US"/>
+      <language description="German" lang="de_DE"/>
+   </languageList>
+   <!-- meiHead -->
+   <key value="encodingDesc">
+      <comment>label for fileDesc element.</comment>
+      <val lang="en_US">Encoding description</val>
+      <val lang="de_DE">Codierungsrichtlinien</val>
+   </key>
+   <key value="fileDesc">
+      <comment>label for fileDesc element.</comment>
+      <val lang="en_US">File description</val>
+      <val lang="de_DE">Datei Metadaten</val>
+   </key>
+   <!-- /meiHead -->
+</translation>

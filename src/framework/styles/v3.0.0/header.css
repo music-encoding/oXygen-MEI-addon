@@ -1,0 +1,21 @@
+contents {
+  display: block;
+  -oxy-display-tags: none;
+}
+
+contents:before {
+  content: "${i18n(contents)}";
+}
+
+contents > contentItem {
+  display: list-item;
+  margin-left: 1em;
+}
+
+contents > contentItem[n] {
+  list-style: none;
+}
+
+contents > contentItem[n]:before {
+  content: attr(n) "  ";
+}

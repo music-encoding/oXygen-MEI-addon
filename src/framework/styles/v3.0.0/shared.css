@@ -1,0 +1,13 @@
+address:before {
+/*  content: "${i18n(address)}";*/
+}
+
+addrLine {
+  display:block;
+  -oxy-display-tags: none;
+}
+
+p {
+  display: block;
+  -oxy-display-tags: none;
+}

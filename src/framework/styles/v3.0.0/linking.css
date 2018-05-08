@@ -1,0 +1,15 @@
+*[target] {
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  -oxy-link: attr(target);
+  link: attr(target);
+  content: "⬈";
+}
+
+*[codedval][authURI] {
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  -oxy-link:attr(authURI)attr(codedval);
+  link: attr(authURI)attr(codedval);
+  content: "⬈";
+}

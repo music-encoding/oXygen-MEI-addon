@@ -1,0 +1,48 @@
+@import url("../oxy.css");
+
+@import url("header.css");
+@import url("linking.css");
+@import url("shared.css");
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|document{
+  margin: 1em;
+}
+
+mei:before {
+  content: "MEI v"attr(meiversion);
+}
+
+meiHead > * {
+  display:block;
+  margin: 1em 0;
+  width: 100%;
+  -oxy-display-tags: none;
+}
+
+meiHead > *:before {
+  display: block;
+  font-weight: bold;
+/*  margin: 1em 0;*/
+  content: oxy_name();
+}
+
+/* fileDesc */
+meiHead > fileDesc:before {
+  content: "${i18n(fileDesc)}";
+}
+
+meiHead > fileDesc > * {
+  display: block;
+}
+
+meiHead > fileDesc title {
+/*  content: oxy_name() oxy_attributes();*/
+}
+
+/* /fileDesc */
+
+music {
+  display:none;
+}

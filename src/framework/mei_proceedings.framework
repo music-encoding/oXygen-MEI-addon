@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
+								<String>${framework}/../music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -218,7 +218,7 @@
 									<String></String>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/stylesheets/proceedings/mecProceedings.xsl</String>
+									<String>${framework}/stylesheets/proceedings/XHTML/to.xsl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String>${currentFileURL}</String>
@@ -327,7 +327,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
+														<String>${framework}/../music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>

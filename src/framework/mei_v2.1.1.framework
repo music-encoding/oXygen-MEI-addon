@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/schemata/2.1.1/schemata/mei-all.rng</String>
+								<String>${framework}/../music-encoding/v2.1.1/schemata/mei-all.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -141,7 +141,9 @@
 						</authorExtension>
 					</field>
 					<field name="templatesLocations">
-						<String-array/>
+						<String-array>
+							<String>${frameworkDir}/templates/v2.1.1</String>
+						</String-array>
 					</field>
 					<field name="xmlCatalogs">
 						<String-array/>
@@ -309,7 +311,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>file:/Users/bwb/oXygen_additional-frameworks/mei/schemata/2.1.1/schemata/mei-all.rng</String>
+														<String>${framework}/../music-encoding/v2.1.1/schemata/mei-all.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>

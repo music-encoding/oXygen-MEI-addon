@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/schemata/4.0.0/schemata/mei-all.rng</String>
+								<String>https://raw.githubusercontent.com/music-encoding/music-encoding/develop/schemata/mei-all.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -255,7 +255,20 @@
 												<null/>
 											</field>
 											<field name="validationSchema">
-												<null/>
+												<validationUnitSchema>
+													<field name="dtdSchemaPublicID">
+														<null/>
+													</field>
+													<field name="schematronPhase">
+														<null/>
+													</field>
+													<field name="type">
+														<Integer>6</Integer>
+													</field>
+													<field name="uri">
+														<String>https://raw.githubusercontent.com/music-encoding/music-encoding/develop/schemata/mei-all.rng</String>
+													</field>
+												</validationUnitSchema>
 											</field>
 										</validationUnit>
 									</list>
@@ -264,14 +277,14 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI</String>
+									<String>MEI v 4.0.0</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>MEI</String>
+							<String>MEI v 4.0.0</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">

@@ -33,7 +33,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/styles/proceedings/core.css</String>
+											<String>${framework}/styles/proceedings/main.css</String>
 										</field>
 										<field name="title">
 											<String></String>

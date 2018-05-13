@@ -1,3 +1,50 @@
+availability {
+  display: block;
+}
+
+availability:before {
+  content: "${i18n(availability)}" ": ";
+  font-weight: bold;
+}
+
+classCode {
+  
+}
+
+classification {
+  display:block;
+}
+
+classification:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(classification)}" ": ";
+}
+
+
+termList {
+  display: block;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+termList > term {
+  display: list-item;
+}
+
+termList > term:before {
+  content: attr(classcode);
+}
+
+termList > term > identifier {
+  display: inline-block;
+  font-style: italic;
+}
+
+termList > term > identifier:before {
+  content: none;
+}
+
 contents {
   display: block;
   -oxy-display-tags: none;
@@ -19,3 +66,281 @@ contents > contentItem[n] {
 contents > contentItem[n]:before {
   content: attr(n) "  ";
 }
+
+/* encodingDesc */
+meiHead > encodingDesc:before {
+  content: "${i18n(encodingDesc)}";
+}
+
+meiHead > encodingDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+/* /encodingDesc */
+
+/* extMeta */
+meiHead > extMeta:before {
+  content: "${i18n(extMeta)}";
+}
+
+meiHead > extMeta > * {
+  display: block;
+}
+/* /extMeta */
+
+/* fileDesc */
+meiHead > fileDesc:before {
+  content: "${i18n(fileDesc)}";
+}
+
+meiHead > fileDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+fileDesc > pubStmt:before {
+  display: block;
+  content: "${i18n(pubStmt)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+/* /fileDesc */
+
+incip {
+  display: block;
+}
+
+incip:before {
+  content: "${i18n(incip)}" ": ";
+  font-weight: bold;
+}
+
+incip > score {
+  display:block;
+  content: "[" "${i18n(incip.score)}" "]";
+}
+
+incip > score * {
+  display: none;
+}
+
+/*incipCode {
+  display: block;
+}*/
+
+incipCode:before {
+  content: attr(form) ": ";
+  font-style: italic;
+}
+
+incipCode + incipCode:before {
+  content: "; " attr(form) ": ";
+}
+
+
+key {
+  display: block;
+}
+
+key:empty[pname][mode] {
+  content: attr(pname) "-" attr(mode);
+}
+
+key:before {
+  content: "${i18n(key)}" ": ";
+  font-weight: bold;
+}
+
+meiHead > * {
+  display:block;
+  margin: 1em 0;
+  width: 100%;
+  -oxy-display-tags: none;
+}
+
+meiHead > *:before {
+  display: block;
+  font-weight: bold;
+/*  margin: 1em 0;*/
+  content: oxy_name();
+  font-size: 1.2em;
+}
+
+meter:empty[count][unit] {
+  display: block;
+  content: attr(count) "/" attr(unit);
+}
+
+meter:before {
+  content: "${i18n(meter)}" ": ";
+  font-weight: bold;
+}
+
+/* perfMedium */
+perfMedium {
+  display:block;
+}
+
+perfMedium:before {
+  content: "${i18n(perfMedium)}" ": ";
+  font-weight: bold;
+}
+
+perfResList {
+  display: block;
+  margin: 0 1em;
+}
+
+perfRes {
+  display: list-item;
+}
+
+perfRes[codedval]:after {
+  content: " (" attr(codedval) ")";
+}
+/* /perfMedium */
+
+/* physDesc */
+physDesc {
+  display: block;
+}
+
+physDesc:before {
+  display: block;
+}
+
+physDesc > titlePage {
+  display: block;
+  margin: 0 0.5em;
+}
+/* /physDesc */
+
+/* pubStmt */
+pubStmt > date:before {
+  content: "${i18n(pubStmt.date)}" ": ";
+  font-weight: bold;
+}
+/* /pubStmt */
+
+respStmt {
+ display: block;
+}
+
+respStmt:before {
+  content: "${i18n(respStmt)}" ": ";
+  font-weight: bold;
+}
+
+respStmt > resp {
+  font-weight: bold;
+}
+
+respStmt > resp:after {
+  content: ": ";
+}
+
+respStmt > persName[role]:after {
+  content: " (" attr(role) ")";
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+/* revisionDesc */
+meiHead > revisionDesc:before {
+  content: "${i18n(revisionDesc)}";
+}
+
+meiHead > revisionDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+/* /revisionDesc */
+
+seriesStmt {
+  display: block;
+}
+
+fileDesc > seriesStmt:before {
+  display: block;
+  content: "${i18n(seriesStmt)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+tempo {
+  display: block;
+}
+
+tempo:before {
+  content: "${i18n(tempo)}" ": ";
+  font-weight: bold;
+}
+
+respStmt > title:after {
+  content: ". ";
+}
+
+titleStmt {
+ display: block;  
+}
+
+fileDesc > titleStmt:before {
+  counter-increment: work-componentGrp;
+  content: "${i18n(titleStmt)}";
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+titleStmt > title:before {
+  content: "${i18n(title)}: ";
+  font-weight: bold;
+}
+
+titleStmt > title[type="uniform"] {
+  display:block;
+}
+
+titleStmt > title[type="uniform"]:before {
+  content: "${i18n(title.uniform)}: ";
+  font-weight: bold;
+}
+
+titleStmt > title[type="subordinate"]:before {
+  content: none;
+}
+
+titleStmt > title:after {
+  content: ". ";
+}
+
+/* workDesc */
+workDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+work > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+/* /workDesc */

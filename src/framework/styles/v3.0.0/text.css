@@ -1,0 +1,15 @@
+li {
+  display: list-item;
+}
+
+list {
+  display: block;
+  list-style-type: asterisks;
+  margin: 0.5em 0;
+  position: static;
+}
+
+list[form="simple"] {
+  display: block;
+  list-style-type: none;
+}

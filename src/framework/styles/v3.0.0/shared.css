@@ -7,7 +7,72 @@ addrLine {
   -oxy-display-tags: none;
 }
 
+date:empty[isodate] {
+  content: attr(isodate);
+}
+
+date[notbefore][notafter] {
+  content: attr(notbefore) "~" attr(notafter);
+}
+
+identifier:before {
+  content: "${i18n(identifier)}" ": ";
+  font-weight: bold;
+}
+
+identifier {
+  display: block;
+}
+
+identifier[type]:after {
+  content: " (" attr(type) ")";
+}
+
+lb {
+  content: "\000A";
+  -oxy-display-tags : none;
+}
+
+mdiv {
+  display: block;
+  content: attr(label);
+  counter-reset: mdiv-measure 0;
+}
+
+mdiv scoreDef {
+  display: none;
+}
+
+mei:before {
+  content: "MEI v"attr(meiversion);
+}
+
+music:empty {
+  display: none;
+}
+
 p {
   display: block;
   -oxy-display-tags: none;
+}
+
+pb {
+  content: "\000A" "[" "${i18n(pb)}" "]" "\000A";
+  -oxy-display-tags: none;
+}
+
+pb[n] {
+  content: "\000A" "[" "${i18n(pb)}" ". " attr(n) "]" "\000A";
+  -oxy-display-tags: none;
+}
+
+sb {
+  display: none;
+  /*content: "\000A";
+  -oxy-display-tags: none;*/
+}
+
+titlePage:before {
+  content: "${i18n(titlePage)}" ": ";
+  font-style: italic;
 }

@@ -1,3 +1,10 @@
+/* global stuff */
+meiHead > * > * > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+/* /global stuff */
+
 availability {
   display: block;
 }
@@ -268,6 +275,7 @@ meiHead > revisionDesc > * {
 }
 /* /revisionDesc */
 
+/* seriesStmt */
 seriesStmt {
   display: block;
 }
@@ -280,6 +288,34 @@ fileDesc > seriesStmt:before {
   background-color: #ffffff;
   padding: 0.5em;
 }
+
+/* source */
+source > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+/* /source */
+
+/* sourceDesc */
+sourceDesc {
+  display: block;
+}
+
+/*sourceDesc:before {
+  display: block;
+  font-weight:bold;
+  content: "${i18n(sourceDesc)}";
+}*/
+
+fileDesc > sourceDesc:before {
+  display: block;
+  content: "${i18n(sourceDesc)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+/* /sourceDesc */
 
 tempo {
   display: block;
@@ -330,8 +366,22 @@ titleStmt > title:after {
   content: ". ";
 }
 
-/* workDesc */
-workDesc > * {
+/* work */
+work > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+
+work > componentGrp {
+  counter-reset: work-componentGrp 0;
+}
+
+work > componentGrp:before {
+  content: "${i18n(work.componentGrp)}";
+  font-weight: bold;
+}
+
+work > componentGrp > work {
   display: block;
   margin: 1em;
   background-color: #eeeeee;
@@ -339,8 +389,23 @@ workDesc > * {
   padding: 1em;
 }
 
-work > * {
-  display:block;
-  margin: 0.5em 0 !important;
+work > componentGrp > work:before {
+  counter-increment: work-componentGrp;
+  content: "${i18n(work)}" " " counter(work-componentGrp, decimal);
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+/* /work */
+
+/* workDesc */
+workDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
 }
 /* /workDesc */

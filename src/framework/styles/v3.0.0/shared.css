@@ -66,6 +66,12 @@ pb[n] {
   -oxy-display-tags: none;
 }
 
+/* respStmt */
+respStmt > * + *:before {
+  content: "; ";
+}
+/* /respStmt */
+
 sb {
   display: none;
   /*content: "\000A";

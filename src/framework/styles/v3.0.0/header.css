@@ -238,29 +238,6 @@ pubStmt > date:before {
 }
 /* /pubStmt */
 
-respStmt {
- display: block;
-}
-
-respStmt:before {
-  content: "${i18n(respStmt)}" ": ";
-  font-weight: bold;
-}
-
-respStmt > resp {
-  font-weight: bold;
-}
-
-respStmt > resp:after {
-  content: ": ";
-}
-
-respStmt > persName[role]:after {
-  content: " (" attr(role) ")";
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
 /* revisionDesc */
 meiHead > revisionDesc:before {
   content: "${i18n(revisionDesc)}";

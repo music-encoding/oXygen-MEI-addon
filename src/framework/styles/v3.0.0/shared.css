@@ -7,6 +7,11 @@ addrLine {
   -oxy-display-tags: none;
 }
 
+body:before {
+  content: "${i18n(body)}";
+  font-weight: bold;
+}
+
 date:empty[isodate] {
   content: attr(isodate);
 }
@@ -47,6 +52,11 @@ mei:before {
   content: "MEI v"attr(meiversion);
 }
 
+music:before {
+  content: "${i18n(music)}";
+  font-weight: bold;
+}
+
 music:empty {
   display: none;
 }
@@ -66,6 +76,11 @@ pb[n] {
   -oxy-display-tags: none;
 }
 
+/* resp */
+resp:empty[codedval]:before {
+  content:  oxy_editor();
+}
+/* /resp */
 /* respStmt */
 respStmt > * + *:before {
   content: "; ";
@@ -101,7 +116,14 @@ sb {
   -oxy-display-tags: none;*/
 }
 
+/* titlePage */
 titlePage:before {
   content: "${i18n(titlePage)}" ": ";
-  font-style: italic;
+  font-weight: bold;
+  display: block;
 }
+
+titlePage > lb + * {
+  display: block;
+}
+/* /titlePage */

@@ -1,0 +1,7 @@
+persName:empty[resp] {
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+  -oxy-link: attr(resp);
+  link: attr(resp);
+  content: attr(resp) "⬈";
+}

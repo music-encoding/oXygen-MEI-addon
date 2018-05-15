@@ -3,7 +3,34 @@ meiHead > * > * > * {
   display:block;
   margin: 0.5em 0 !important;
 }
+
+*[label]:before {
+  -oxy-prepend-content: attr(label);
+}
 /* /global stuff */
+
+appInfo {
+  display:block;
+}
+
+appInfo:before {
+  content: "${i18n(appInfo)}";
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+application {
+  display: list-item;
+  margin: 0 0 0 0.5em !important;
+  
+}
+
+application:after {
+  content: " (version" attr(version) ")";
+}
 
 availability {
   display: block;
@@ -14,9 +41,68 @@ availability:before {
   font-weight: bold;
 }
 
-classCode {
-  
+captureMode {
+  display:block;
 }
+
+captureMode:before {
+  content: "${i18n(captureMode)}" ": ";
+  font-weight: bold;
+}
+
+carierForm {
+  display:block;
+}
+
+carierForm:before {
+  content: "${i18n(carierForm)}" ": ";
+  font-weight: bold;
+}
+
+condition {
+  display:block;
+}
+
+condition:before {
+  content: "${i18n(condition)}" ": ";
+  font-weight: bold;
+}
+
+dimensions {
+  display: block;
+}
+
+dimensions:before {
+  content: "${i18n(dimensions)}" ": ";
+  font-weight: bold;
+}
+
+dimensions[label]:before {
+  content: "${i18n(dimensions)}" ", " attr(label) ": ";
+  font-weight: bold;
+}
+
+dimensions[unit]:after {
+  content: " (" attr(unit) ")";
+}
+
+/* change */
+revisionDesc > change[n] {
+  content: "${i18n(change)}" " " attr(n);
+}
+
+revisionDesc > change > respStmt {
+  display: inline-block;
+}
+
+revisionDesc > change > respStmt:before {
+  content: " by:";
+}
+/* /change */
+
+/*classCode {
+  
+}*/
 
 classification {
   display:block;
@@ -28,6 +114,53 @@ classification:before {
   content: "${i18n(classification)}" ": ";
 }
 
+/* itemList */
+itemList {
+  display:block;
+}
+
+itemList:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(itemList)}" ": ";
+}
+
+itemList > item {
+  display:block;
+  border: 1px solid #888888;
+  padding: 0.5em;
+}
+
+itemList > item:before {
+  display: block;
+  content: "${i18n(item)}" " " attr(xml|id) " (xml:id)";
+  margin: -0.5em -0.5em 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+itemList > item > * {
+  margin: 0.5em 0 0 0;
+} 
+/* /itemList */
+
+langUsage > language:before {
+  font-weight: bold;
+  content:" " "${i18n(language)}" ": ";
+}
+
+physDesc:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(physDesc)}" ": ";
+}
+
+physLoc:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(physLoc)}" ": ";
+}
 
 termList {
   display: block;
@@ -227,9 +360,17 @@ physDesc:before {
 
 physDesc > titlePage {
   display: block;
-  margin: 0 0.5em;
 }
 /* /physDesc */
+
+provenance {
+  display:block;
+}
+
+provenance:before {
+  content: "${i18n(provenance)}" ": ";
+  font-weight: bold;
+}
 
 /* pubStmt */
 pubStmt > date:before {
@@ -341,6 +482,42 @@ titleStmt > title[type="subordinate"]:before {
 
 titleStmt > title:after {
   content: ". ";
+}
+
+trackConfig {
+  display:block;
+}
+
+trackConfig:before {
+  content: "${i18n(trackConfig)}" ": ";
+  font-weight: bold;
+}
+
+treatHist {
+  display:block;
+}
+
+treatHist:before {
+  content: "${i18n(treatHist)}" ": ";
+  font-weight: bold;
+}
+
+treatSched {
+  display:block;
+}
+
+treatSched:before {
+  content: "${i18n(treatSched)}" ": ";
+  font-weight: bold;
+}
+
+watermark {
+  display:block;
+}
+
+watermark:before {
+  content: "${i18n(watermark)}" ": ";
+  font-weight: bold;
 }
 
 /* work */

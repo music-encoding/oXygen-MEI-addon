@@ -190,8 +190,8 @@ mei|*[rend~="fixed-width"]{
   margin: 1.5em 2em 2em;
   font-size: .9em;
 }
-.equation,
-.fig{
+equation,
+fig{
   margin: 1em 0 0 0;
 }
 img{ /* img */

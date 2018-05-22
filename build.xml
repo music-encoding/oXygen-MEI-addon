@@ -59,6 +59,7 @@
         <filter token="ZIP" value="${zip}"/>
       </filterset>
     </copy>
+    <!-- mec-proceedings -->
     <copy todir="${dest}/framework/templates/mec-proceedings/">
       <fileset dir="submodules/mec-proceedings/examples/"/>
       <fileset dir="submodules/mec-proceedings/templates/"/>
@@ -69,6 +70,7 @@
     <copy todir="${dest}/framework/stylesheets/mec-proceedings/">
       <fileset dir="submodules/mec-proceedings/stylesheets/"/>
     </copy>
+    <!-- /mec-proceedings -->
     <copy todir="${dest}" flatten="false" outputencoding="utf-8">
       <fileset dir="assets"/>
     </copy>

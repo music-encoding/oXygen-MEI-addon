@@ -71,6 +71,11 @@
       <fileset dir="submodules/mec-proceedings/stylesheets/"/>
     </copy>
     <!-- /mec-proceedings -->
+    <!-- encoding-tools -->
+    <copy todir="${dest}/encoding-tools/" flatten="false"> 
+      <fileset dir="submodules/encoding-tools/"/>
+    </copy>
+    <!-- /encoding-tools -->
     <copy todir="${dest}" flatten="false" outputencoding="utf-8">
       <fileset dir="assets"/>
     </copy>

@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>MEI proceedings</String>
+						<String>MEC proceedings</String>
 					</field>
 					<field name="schemaDescriptor">
 						<docTypeSchema>
@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/../music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
+								<String>${framework}/../music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -200,7 +200,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>MEI proceedings to HTML</String>
+									<String>MEC proceedings to HTML</String>
 								</field>
 								<field name="baseURL">
 									<String></String>
@@ -218,7 +218,7 @@
 									<String></String>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/stylesheets/proceedings/XHTML/to.xsl</String>
+									<String>${framework}/stylesheets/mec-proceedings/XHTML/to.xsl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String>${currentFileURL}</String>
@@ -327,7 +327,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/../music-encoding/proceedings/schemata/mecProceedings_schema.rng</String>
+														<String>${framework}/../music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -338,7 +338,7 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI proceedings</String>
+									<String>MEC proceedings v0.05</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>

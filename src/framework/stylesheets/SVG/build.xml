@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="render-verovio" default="main">
+
+  <property name="file.path" value=""/>
+  <property name="verovio.path" value=""/>
+  <echo>${file.path}</echo>
+  
+  <target name="generate">
+    <echo>${file.path}</echo>
+    <java dir="${verovio.path}" classpath="../target/VerovioToolkit-2.0.0.jar" fork="true" classname="main">
+      <arg value="${file.path}"/>
+    </java>
+  </target>
+  <target name="open"></target>
+  <target name="main" depends="generate">
+  </target>
+  
+</project>

@@ -348,6 +348,9 @@ graphic[target] {
   width: 100%;
 }
 
+programCode {
+  font: monospace;
+}
 /*ref:before{
   color: rgb(0, 0, 238);
   text-decoration: underline;

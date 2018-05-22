@@ -1,4 +1,5 @@
 @namespace eg "http://www.music-encoding.org/ns/mei/Examples";
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
 
 /*FROM JTEI*/
 /* reset styles for all egXML content */
@@ -36,7 +37,7 @@ figure eg|egXML, figure eg {
 eg|egXML eg|* {
   margin-left: .5em;
   text-align: left;
-  display: block;
+/*  display: inline-block;*/
 }
 eg|egXML *:before { 
   content: "<" oxy_name() oxy_attributes() ">";
@@ -76,7 +77,7 @@ eg|egXML{ /* pre */
   display: block;
   padding: 1em;
   -oxy-display-tags: none;
-  white-space:pre-wrap !important;
+/*  white-space:pre-wrap !important;*/
 }
 
 eg|egXML[valid="true"]:before{ /* pre.valid:before */
@@ -113,12 +114,74 @@ eg|egXML[valid="feasible"]:before{
   border-radius: .5em 0 0 .5em;
 }
 
-eg|egXML * {
+eg|egXML *, eg|egXML > eg|egXML, egXML > egXML, egXML > eg|egXML, eg|egXML > egXML {
   font-weight: normal !important;
   font-style: normal !important;
   /*font-size: medium;*/
   text-decoration: none !important;
-  position: static !important;
+  position: relative !important;
   vertical-align: baseline !important;
   bottom: 0 !important;
+  -oxy-display-tags: none !important;
+  display: inline-block !important;
+  border: none !important;
+  text-transform: none !important;
+  -oxy-link : none !important;
+  link : none !important;
+  content: none !important;
+}
+
+
+eg|egXML bibl:before { 
+  content: "<" oxy_name() oxy_attributes() ">" !important;
+  text-transform: none !important;
+}
+eg|egXML bibl:after { 
+  content: "</" oxy_name() ">" !important;
+  text-transform: none !important;
+}
+
+eg|egXML eg|egXML:before, egXML egXML:before { 
+  content: "<" oxy_name() oxy_attributes() ">"!important;
+}
+eg|egXML eg|egXML:after { 
+  content: "</" oxy_name() ">" !important;
+}
+
+eg|egXML oxy|cdata {
+    display:-oxy-morph !important;
+    white-space:pre-wrap !important;
+    border-width:0px !important;
+    margin:0px !important;
+    padding: 0px !important;
+    color: green;
+}
+
+eg|egXML oxy|cdata:before {
+  content: "<![CDATA[";
+  color: green;
+}
+
+eg|egXML oxy|cdata:after {
+  content: "]]>";
+  color: green;
+}
+
+eg|egXML eg|egXML[valid]:before{
+  position: static !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  background-color: inherit !important;
+/*  content: none !important;*/
+  border-radius: 0 !important;
+}
+
+
+eg|egXML *[empty]:before {
+  content: "<" oxy_name() oxy_attributes() !important;;
+}
+
+eg|egXML *[empty]:after { 
+  content: "/>" !important;
 }

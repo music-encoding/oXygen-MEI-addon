@@ -353,10 +353,10 @@
 						<null/>
 					</field>
 					<field name="useImposedInitialPage">
-						<Boolean>false</Boolean>
+						<Boolean>true</Boolean>
 					</field>
 					<field name="imposedInitialPage">
-						<String>Text</String>
+						<String>Author</String>
 					</field>
 					<field name="elementLocatorExtension">
 						<null/>

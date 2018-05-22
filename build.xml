@@ -69,6 +69,9 @@
     <copy todir="${dest}/framework/stylesheets/mec-proceedings/">
       <fileset dir="submodules/mec-proceedings/stylesheets/"/>
     </copy>
+    <copy todir="${dest}" flatten="false" outputencoding="utf-8">
+      <fileset dir="assets"/>
+    </copy>
     <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${revision}/${zip}"/>
     <copy file="${dest}/extension.xml" todir="${dist.dir}/${revision}/"/>
   </target>

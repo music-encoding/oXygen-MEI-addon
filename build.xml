@@ -59,6 +59,16 @@
         <filter token="ZIP" value="${zip}"/>
       </filterset>
     </copy>
+    <copy todir="${dest}/framework/templates/mec-proceedings/">
+      <fileset dir="submodules/mec-proceedings/examples/"/>
+      <fileset dir="submodules/mec-proceedings/templates/"/>
+    </copy>
+    <copy todir="${dest}/music-encoding/mec-proceedings/schemata/">
+      <fileset dir="submodules/mec-proceedings/schemata/"/>
+    </copy>
+    <copy todir="${dest}/framework/stylesheets/mec-proceedings/">
+      <fileset dir="submodules/mec-proceedings/stylesheets/"/>
+    </copy>
     <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${revision}/${zip}"/>
     <copy file="${dest}/extension.xml" todir="${dist.dir}/${revision}/"/>
   </target>

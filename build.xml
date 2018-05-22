@@ -43,7 +43,8 @@
   <target name="dist" depends="clean,init,get-local-git-revision,load-license">
     <antcall target="frameworks.init"/>
     <property name="zip" value="${name.short}_${revision}.zip"/>
-    <copy todir="${build.dir}" flatten="true" outputencoding="utf-8">
+    <property name="dest" value="${build.dir}/${name.short}"/>
+    <copy todir="${dest}" flatten="false" outputencoding="utf-8">
       <fileset dir="LICENSES" />
       <fileset dir="src">
         <include name="**/**"/>
@@ -59,7 +60,7 @@
       </filterset>
     </copy>
     <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${revision}/${zip}"/>
-    <copy file="${build.dir}/extension.xml" todir="${dist.dir}/${revision}/"/>
+    <copy file="${dest}/extension.xml" todir="${dist.dir}/${revision}/"/>
   </target>
   
   <target name="v3.0.0">

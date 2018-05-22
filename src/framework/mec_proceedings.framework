@@ -33,7 +33,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/styles/proceedings/main.css</String>
+											<String>${framework}/styles/mec-proceedings/main.css</String>
 										</field>
 										<field name="title">
 											<String></String>
@@ -154,7 +154,7 @@
 					</field>
 					<field name="templatesLocations">
 						<String-array>
-							<String>${frameworkDir}/templates/proceedings/</String>
+							<String>${frameworkDir}/templates/mec-proceedings/</String>
 						</String-array>
 					</field>
 					<field name="xmlCatalogs">

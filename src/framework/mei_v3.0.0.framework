@@ -54,7 +54,54 @@
 								<Boolean>false</Boolean>
 							</field>
 							<field name="actionDescriptors">
-								<action-array/>
+								<action-array>
+									<action>
+										<field name="id">
+											<String>MEI-v3.0.0-to-SVG</String>
+										</field>
+										<field name="name">
+											<String>MEI v3.0.0 to SVG</String>
+										</field>
+										<field name="description">
+											<String></String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>node()</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>scenarioNames</String>
+																<String>MEI v3.0.0 to SVG</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ExecuteTransformationScenariosOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+								</action-array>
 							</field>
 							<field name="menubarDescriptor">
 								<menu>
@@ -109,7 +156,13 @@
 										<null/>
 									</field>
 									<field name="toolbarEntriesDescriptorList">
-										<toolbarEntry-array/>
+										<toolbarEntry-array>
+											<toolbarItem>
+												<field name="actionID">
+													<String>MEI-v3.0.0-to-SVG</String>
+												</field>
+											</toolbarItem>
+										</toolbarEntry-array>
 									</field>
 								</toolbar>
 							</field>

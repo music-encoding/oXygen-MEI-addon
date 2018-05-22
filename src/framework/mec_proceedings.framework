@@ -154,7 +154,7 @@
 					</field>
 					<field name="templatesLocations">
 						<String-array>
-							<String>${frameworkDir}/templates/mec-proceedings/</String>
+							<String>${frameworkDir}/templates/mec-proceedings</String>
 						</String-array>
 					</field>
 					<field name="xmlCatalogs">

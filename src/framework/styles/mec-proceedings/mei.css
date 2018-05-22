@@ -72,6 +72,19 @@ table{
   /* add */
   display:table;
 }
+
+tr {
+  display: table-row;
+}
+
+table > caption {
+  display: table-caption;
+}
+
+td {
+  display: table-cell;
+}
+
 tr + tr td{
   border-top: .5px solid #999999;
 }

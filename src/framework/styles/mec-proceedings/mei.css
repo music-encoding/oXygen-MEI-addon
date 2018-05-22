@@ -341,6 +341,13 @@ mei|ref{
   link: oxy_xpath("normalize-space(./text())");
   content: "⬈";
 }
+
+graphic[target] {
+  display: block;
+  content: attr(target, url);
+  width: 100%;
+}
+
 /*ref:before{
   color: rgb(0, 0, 238);
   text-decoration: underline;

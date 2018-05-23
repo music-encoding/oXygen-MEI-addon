@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="18.1">
     <meta>
-        <filters directoryPatterns="" filePatterns="oXygen-MEI-plugin.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <filters directoryPatterns="" filePatterns="oXygen-MEI-plugin.xpr" positiveFilePatterns="" showHiddenFiles="true"/>
         <options>
             <serialized version="18.1" xml:space="preserve">
                 <map>

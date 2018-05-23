@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/../music-encoding/v2.1.0/schemata/mei-all.rng</String>
+								<String>${framework}/music-encoding/v2.1.0/schemata/mei-all.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -311,7 +311,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/../music-encoding/v2.1.0/schemata/mei-all.rng</String>
+														<String>${framework}/music-encoding/v2.1.0/schemata/mei-all.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>

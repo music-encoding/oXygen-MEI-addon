@@ -41,15 +41,17 @@
   </target>
   
   <target name="dist" depends="clean,init,get-local-git-revision,load-license">
-    <antcall target="frameworks.init"/>
+    <!--<antcall target="frameworks.init"/>-->
     <property name="zip" value="${name.short}_${revision}.zip"/>
     <property name="dest" value="${build.dir}/${name.short}"/>
     <copy todir="${dest}" flatten="false" outputencoding="utf-8">
       <fileset dir="LICENSES" />
-      <fileset dir="src">
-        <include name="**/**"/>
-        <exclude name="plugin"/>
+      <fileset dir="src/" >
+        <exclude name="framework/"/>
+        <!--<include name="**/**"/>-->
+        <!--<exclude name="plugin"/>-->
       </fileset>
+      <fileset dir="src/framework/"/>
       <filterset>
         <filter token="NAME" value="${name}"/>
         <filter token="ID" value="${name.short}"/>
@@ -60,14 +62,14 @@
       </filterset>
     </copy>
     <!-- mec-proceedings -->
-    <copy todir="${dest}/framework/templates/mec-proceedings/">
+    <copy todir="${dest}/templates/mec-proceedings/">
       <fileset dir="submodules/mec-proceedings/examples/"/>
       <fileset dir="submodules/mec-proceedings/templates/"/>
     </copy>
     <copy todir="${dest}/music-encoding/mec-proceedings/schemata/">
       <fileset dir="submodules/mec-proceedings/schemata/"/>
     </copy>
-    <copy todir="${dest}/framework/stylesheets/mec-proceedings/">
+    <copy todir="${dest}/stylesheets/mec-proceedings/">
       <fileset dir="submodules/mec-proceedings/stylesheets/"/>
     </copy>
     <!-- /mec-proceedings -->

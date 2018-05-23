@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/../music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
+								<String>${framework}/music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -327,7 +327,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/../music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
+														<String>${framework}/music-encoding/mec-proceedings/schemata/mecProceedings_schema.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>

@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/../music-encoding/v2.0.0/schemata/mei-all.rng</String>
+								<String>${framework}/music-encoding/v2.0.0/schemata/mei-all.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -232,7 +232,7 @@
 									<String></String>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/../encoding-tools/mei2012To2013/mei2012To2013.xsl</String>
+									<String>${framework}/encoding-tools/mei2012To2013/mei2012To2013.xsl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String>${currentFileURL}</String>
@@ -372,7 +372,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/../music-encoding/v2.0.0/schemata/mei-all.rng</String>
+														<String>${framework}/music-encoding/v2.0.0/schemata/mei-all.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>

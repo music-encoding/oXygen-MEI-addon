@@ -2,3 +2,7 @@
 	path = submodules/encoding-tools
 	url = https://github.com/music-encoding/encoding-tools
 	branch = master
+[submodule "mec-proceedings"]
+	path = submodules/mec-proceedings
+	url = https://github.com/music-encoding/mec-proceedings
+	branch = master

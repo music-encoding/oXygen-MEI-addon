@@ -5,7 +5,7 @@
 [submodule "mec-proceedings"]
 	path = submodules/mec-proceedings
 	url = https://github.com/music-encoding/mec-proceedings
-	branch = master
+	branch = reorganise
 [submodule "verovio"]
 	path = submodules/verovio
 	url = https://github.com/rism-ch/verovio

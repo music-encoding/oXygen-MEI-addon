@@ -16,6 +16,6 @@ build
 dist
 temp
 assets
-submodules
+#submodules
 oXygen-MEI-addon.xpr
 *.xpr

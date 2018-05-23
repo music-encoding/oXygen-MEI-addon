@@ -1,0 +1,4 @@
+[submodule "encoding-tools"]
+	path = submodules/encoding-tools
+	url = https://github.com/music-encoding/encoding-tools
+	branch = master

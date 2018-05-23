@@ -6,3 +6,7 @@
 	path = submodules/mec-proceedings
 	url = https://github.com/music-encoding/mec-proceedings
 	branch = master
+[submodule "verovio"]
+	path = submodules/verovio
+	url = https://github.com/rism-ch/verovio
+	branch = master

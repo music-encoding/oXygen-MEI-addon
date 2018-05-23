@@ -424,7 +424,7 @@
 												<String></String>
 											</field>
 											<field name="value">
-												<String>${frameworkDir(MEI v3.0.0)}/../verovio/bindings/java/example-mei/</String>
+												<String>${frameworkDir(MEI v3.0.0)}/verovio/bindings/java/example-mei/</String>
 											</field>
 											<field name="defaultValue">
 												<null/>

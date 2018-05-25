@@ -63,7 +63,7 @@
     </exec>
   </target>
   
-  <target name="verovio-compile" ><!-- depends="verovio-build" -->
+  <target name="verovio-compile" depends="verovio-build">
     <javac srcdir="submodules/verovio/bindings/java/example-mei/"
       destdir="submodules/verovio/bindings/java/example-mei/"
       classpath="file:///Users/bwb/GitHub/oXygen-MEI-addon/submodules/verovio/bindings/java/target/VerovioToolkit-2.0.0.jar"

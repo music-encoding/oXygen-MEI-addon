@@ -127,8 +127,8 @@
     <copy todir="${dest}" flatten="false" outputencoding="utf-8">
       <fileset dir="assets"/>
     </copy>
-    <zip basedir="${build.dir}" excludes="extension.xml" destfile="${dist.dir}/${revision}/${zip}"/>
-    <copy file="${dest}/extension.xml" todir="${dist.dir}/${revision}/"/>
+    <zip basedir="${build.dir}" excludes="oXygen-MEI-addon.xml" destfile="${dist.dir}/${revision}/${zip}"/>
+    <copy file="${dest}/oXygen-MEI-addon.xml" todir="${dist.dir}/${revision}/"/>
   </target>
   
   <target name="v3.0.0">

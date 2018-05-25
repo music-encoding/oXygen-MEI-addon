@@ -40,6 +40,39 @@
     <echo>${license}</echo>
   </target>
   
+  <target name="verovio-copy-src">
+    <copy file="src/verovio/bindings/java/example-mei/main.java" todir="submodules/verovio/bindings/java/example-mei/" overwrite="yes"/>
+  </target>
+  
+  <target name="verovio-clean">
+    <exec dir="submodules/verovio/bindings/java/" executable="mvn">
+      <arg value="clean"/>
+    </exec>
+    <delete file="submodules/verovio/bindings/java/example-mei/main.class"/>
+  </target>
+  
+  <target name="verovio-prepare" depends="verovio-copy-src, verovio-clean">
+    <exec dir="submodules/verovio/bindings/java/" executable="mvn">
+      <arg value="package"/>
+    </exec>
+  </target>
+  
+  <target name="verovio-build" depends="verovio-prepare">
+    <exec dir="submodules/verovio/bindings/java/" executable="mvn">
+      <arg value="package"/>
+    </exec>
+  </target>
+  
+  <target name="verovio-compile" ><!-- depends="verovio-build" -->
+    <javac srcdir="submodules/verovio/bindings/java/example-mei/"
+      destdir="submodules/verovio/bindings/java/example-mei/"
+      classpath="file:///Users/bwb/GitHub/oXygen-MEI-addon/submodules/verovio/bindings/java/target/VerovioToolkit-2.0.0.jar"
+      verbose="true"
+      includeantruntime="true">
+      <!--<src path="/Users/bwb/GitHub/oXygen-MEI-addon/src/verovio/bindings/java/example-mei/"></src>-->
+    </javac>
+  </target>
+  
   <target name="dist" depends="clean,init,get-local-git-revision,load-license">
     <!--<antcall target="frameworks.init"/>-->
     <property name="zip" value="${name.short}_${revision}.zip"/>

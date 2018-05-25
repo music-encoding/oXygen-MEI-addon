@@ -81,10 +81,11 @@
       <fileset dir="LICENSES" />
       <fileset dir="src/" >
         <exclude name="framework/"/>
-        <!--<include name="**/**"/>-->
-        <!--<exclude name="plugin"/>-->
+        <exclude name="plugin/"/>
+        <exclude name="verovio/"/>
       </fileset>
       <fileset dir="src/framework/"/>
+      <fileset dir="src/plugin/"/>
       <filterset>
         <filter token="NAME" value="${name}"/>
         <filter token="ID" value="${name.short}"/>
@@ -93,6 +94,19 @@
         <filter token="LICENSE" value="${license}"/>
         <filter token="ZIP" value="${zip}"/>
       </filterset>
+    </copy>
+    <!-- verovio -->
+    <copy todir="${dest}/verovio/bindings/java/" flatten="false">
+      <fileset dir="submodules/verovio/bindings/java/"/>
+    </copy>
+    <copy todir="${dest}/verovio/bindings/java/example-mei" flatten="false">
+      <fileset dir="submodules/verovio/bindings/java/target/classes/"/>
+    </copy>
+    <copy todir="${dest}/verovio/data/" flatten="false">
+      <fileset dir="submodules/verovio/data/"/>
+    </copy>
+    <copy todir="${dest}/verovio/src/" flatten="false">
+      <fileset dir="submodules/verovio/src/"/>
     </copy>
     <!-- mec-proceedings -->
     <copy todir="${dest}/templates/mec-proceedings/">

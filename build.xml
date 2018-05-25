@@ -41,7 +41,7 @@
   </target>
   
   <target name="verovio-copy-src">
-    <copy file="src/verovio/bindings/java/example-mei/main.java" todir="submodules/verovio/bindings/java/example-mei/" overwrite="yes"/>
+    <copy file="src/verovio/main.java" todir="submodules/verovio/bindings/java/example-mei/" overwrite="yes"/>
   </target>
   
   <target name="verovio-clean">

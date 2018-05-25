@@ -69,7 +69,6 @@
       classpath="file:///Users/bwb/GitHub/oXygen-MEI-addon/submodules/verovio/bindings/java/target/VerovioToolkit-2.0.0.jar"
       verbose="true"
       includeantruntime="true">
-      <!--<src path="/Users/bwb/GitHub/oXygen-MEI-addon/src/verovio/bindings/java/example-mei/"></src>-->
     </javac>
   </target>
   

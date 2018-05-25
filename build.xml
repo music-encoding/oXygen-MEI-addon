@@ -73,7 +73,7 @@
   </target>
   
   <target name="dist" depends="clean,init,get-local-git-revision,load-license">
-    <!--<antcall target="frameworks.init"/>-->
+    <antcall target="frameworks.init"/>
     <property name="zip" value="${name.short}_${revision}.zip"/>
     <property name="dest" value="${build.dir}/${name.short}"/>
     <copy todir="${dest}" flatten="false" outputencoding="utf-8">

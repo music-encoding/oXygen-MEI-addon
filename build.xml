@@ -17,6 +17,7 @@
   <target name="reset">
     <delete dir="${build.dir}"/>
     <delete dir="${dist.dir}"/>
+    <antcall target="clean.assets"/>
   </target>
 
   <target name="clean.assets">

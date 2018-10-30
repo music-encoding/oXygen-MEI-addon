@@ -1,4 +1,4 @@
-# oXygen-MEI-addon
+# oXygen-MEI-addon [![Build Status](https://travis-ci.org/music-encoding/oXygen-MEI-addon.svg?branch=develop)](https://travis-ci.org/music-encoding/oXygen-MEI-addon)
 
 A MEI (http://www.music-encoding.org) addon for oXygen XML Editor
 

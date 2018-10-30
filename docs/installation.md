@@ -15,7 +15,7 @@ At the moment there is no update site publicly available for the installation of
 
 4.  Enter the following URL in the line labeled “Show add-ons from”:
    
-   `http://www.` 
+   ` tba.`
    
 5.  A list of available add-ons appears
 

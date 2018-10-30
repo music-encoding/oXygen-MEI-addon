@@ -18,6 +18,7 @@
     <delete dir="${build.dir}"/>
     <delete dir="${dist.dir}"/>
     <antcall target="clean.assets"/>
+    <antcall target="verovio-clean"/>
   </target>
 
   <target name="clean.assets">
@@ -58,22 +59,21 @@
     </exec>
   </target>
   
-  <target name="verovio-build" depends="verovio-prepare">
+  <target name="verovio-build" depends="verovio-prepare" >
     <exec dir="submodules/verovio/bindings/java/" executable="mvn">
       <arg value="package"/>
     </exec>
   </target>
   
   <target name="verovio-compile" depends="verovio-build">
-    <javac srcdir="submodules/verovio/bindings/java/example-mei/"
-      destdir="submodules/verovio/bindings/java/example-mei/"
-      classpath="file:///Users/bwb/GitHub/oXygen-MEI-addon/submodules/verovio/bindings/java/target/VerovioToolkit-2.0.0.jar"
-      verbose="true"
-      includeantruntime="true">
-    </javac>
+    <exec dir="submodules/verovio/bindings/java/example-mei/" executable="javac">
+      <arg line="-classpath" />
+      <arg value=".:../target/VerovioToolkit-2.0.0.jar"/>
+      <arg value="main.java"/>
+    </exec>
   </target>
   
-  <target name="dist" depends="clean,init,get-local-git-revision,load-license">
+  <target name="dist" depends="clean,init,get-local-git-revision,load-license,verovio-compile">
     <antcall target="frameworks.init"/>
     <property name="zip" value="${name.short}_${revision}.zip"/>
     <property name="dest" value="${build.dir}/${name.short}"/>

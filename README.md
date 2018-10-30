@@ -1,6 +1,18 @@
-# oXygen-MEI-addon
+# oXygen-MEI-addon [![Build Status](https://travis-ci.org/music-encoding/oXygen-MEI-addon.svg?branch=develop)](https://travis-ci.org/music-encoding/oXygen-MEI-addon)
 
 A MEI (http://www.music-encoding.org) addon for oXygen XML Editor
+
+# Documentation
+
+More documentation, e.g., on [building](docs/build-instructions.md) or [installing](docs/installation.md) the *oXygen-MEI-addon* can be found in the `docs` directory.
+
+## Contributing
+
+This repo is organized along the concepts introduced by Vincent Driessen in his blog-post [„A scuccessful Git branching model“](https://nvie.com/posts/a-successful-git-branching-model/) if you'd like to contribute, please try to follow the guidelines outlined there.
+
+## Continuous integration
+
+Travis-CI is setup to automatically build pushed branches and pushed pull requests. The results can be seen at https://travis-ci.org/music-encoding/oXygen-MEI-addon or the travis status image at the top of this readme.
 
 ## Licenses
 

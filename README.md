@@ -2,6 +2,10 @@
 
 A MEI (http://www.music-encoding.org) addon for oXygen XML Editor
 
+# Documentation
+
+More documentation, e.g., on [building](docs/build-instructions.md) or [installing](docs/installation.md) the *oXygen-MEI-addon* can be found in the `docs` directory.
+
 ## Contributing
 
 This repo is organized along the concepts introduced by Vincent Driessen in his blog-post [„A scuccessful Git branching model“](https://nvie.com/posts/a-successful-git-branching-model/) if you'd like to contribute, please try to follow the guidelines outlined there.

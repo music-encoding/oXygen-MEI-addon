@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serialized version="18.1" xml:space="preserve">
-	<map>
+	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
@@ -354,5 +354,5 @@
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</map>
+	</serializableOrderedMap>
 </serialized>

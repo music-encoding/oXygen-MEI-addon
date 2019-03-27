@@ -10,3 +10,7 @@
 	path = submodules/verovio
 	url = https://github.com/rism-ch/verovio
 	branch = master
+[submodule "submodules/music-encoding"]
+	path = submodules/music-encoding
+	url = https://github.com/music-encoding/music-encoding/
+	branch = master

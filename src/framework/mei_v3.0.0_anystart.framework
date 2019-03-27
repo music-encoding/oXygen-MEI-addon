@@ -322,14 +322,14 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI 3.0.0 - anyStart</String>
+									<String>MEI v3.0.0 anyStart</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>MEI 3.0.0 - anyStart</String>
+							<String>MEI v3.0.0 anyStart</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">

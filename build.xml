@@ -8,6 +8,7 @@
   <target name="init">
     <mkdir dir="${build.dir}"/>
     <mkdir dir="${dist.dir}"/>
+    <antcall target="git-submodule-init"/>
   </target>
   
   <target name="clean">
@@ -51,6 +52,13 @@
     <exec executable="git" dir="${dir.path}">
       <arg value="checkout"/>
       <arg value="master"/>
+    </exec>
+  </target>
+  
+  <target name="git-submodule-init">
+    <exec executable="git" dir=".">
+      <arg value="submodule"/>
+      <arg value="init"/>
     </exec>
   </target>
   

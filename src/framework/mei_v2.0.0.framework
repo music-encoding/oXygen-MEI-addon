@@ -394,7 +394,9 @@
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
-						<null/>
+						<list>
+							<String>MEI v2.0.0 (2012) to MEI v2.1.0 (2013)</String>
+						</list>
 					</field>
 					<field name="extensionsBundleClassName">
 						<null/>

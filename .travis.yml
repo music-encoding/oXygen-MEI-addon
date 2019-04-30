@@ -2,3 +2,6 @@ before_install: openssl aes-256-cbc -K $encrypted_5cc4f88b0a0b_key -iv $encrypte
 language: java
 script:
  - ant
+addons:
+  apt_packages:
+    - swig

@@ -164,10 +164,13 @@
     <!-- create assets directories -->
     <mkdir dir="assets/music-encoding/v4.0.0/schemata/"/>
     <mkdir dir="assets/music-encoding/v4.0.0/guidelines/"/>
-    <exec executable="git" dir="submodules/music-encoding/">
+    <antcall target="git-checkout-master">
+      <param name="dir.path">submodules/music-encoding/</param>
+    </antcall>
+    <!--<exec executable="git" dir="submodules/music-encoding/">
       <arg value="checkout"/>
       <arg value="master"/>
-    </exec>
+    </exec>-->
     <exec executable="git" dir="submodules/music-encoding/">
       <arg value="pull"/>
     </exec>

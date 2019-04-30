@@ -48,6 +48,7 @@
   
   <target name="git-checkout-master">
     <property name="dir.path"/>
+    <mkdir dir="${dir.path}"/>
     <?TODO how to submit params ?>
     <exec executable="git" dir="${dir.path}">
       <arg value="checkout"/>

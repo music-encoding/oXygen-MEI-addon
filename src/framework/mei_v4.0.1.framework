@@ -277,14 +277,14 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI v 4.0.1</String>
+									<String>MEI v4.0.1</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>MEI v 4.0.1</String>
+							<String>MEI v4.0.1</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">

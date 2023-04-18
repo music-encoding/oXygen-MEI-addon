@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="18.1" xml:space="preserve">
+<serialized xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -33,7 +33,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/styles/4.0.1.css</String>
+											<String>${framework}/styles/v4/main.css</String>
 										</field>
 										<field name="title">
 											<String></String>
@@ -330,6 +330,9 @@
 						<null/>
 					</field>
 					<field name="customAttributeValueEditor">
+						<null/>
+					</field>
+					<field name="textModeExternalObjectInsertionHandler">
 						<null/>
 					</field>
 				</documentTypeDescriptor>

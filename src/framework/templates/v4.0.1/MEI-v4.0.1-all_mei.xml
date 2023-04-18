@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/bwb/SVN/zimmermann/trunk/Arbeitsumgebung/frameworks/oXygen-MEI-addon/music-encoding/v4.0.1/schemata/mei-all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <title></title>
+            </titleStmt>
+            <pubStmt></pubStmt>
+        </fileDesc>
+    </meiHead>
+    <music></music>
+</mei>

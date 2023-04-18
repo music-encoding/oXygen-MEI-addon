@@ -1,0 +1,13 @@
+measure {
+  counter-increment: mdiv-measure;
+  display:none;
+}
+
+measure:last-of-type {
+  content: counter(mdiv-measure, decimal) " " "${i18n(measures)}";
+  display: block;
+}
+
+measure > * {
+  display: none;
+}

@@ -1,0 +1,16 @@
+@import url("../oxy.css");
+
+@import url("cmn.css");
+@import url("edittrans.css");
+@import url("facsimile.css");
+@import url("header.css");
+@import url("linking.css");
+@import url("namesdates.css");
+@import url("shared.css");
+@import url("text.css");
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|document {
+  margin: 1em;
+}

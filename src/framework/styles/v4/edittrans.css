@@ -1,0 +1,18 @@
+choice {
+  -oxy-foldable: true;
+  -oxy-folded: true;
+}
+
+choice:after {
+  content: "*";
+  color: rgb(0, 0, 238);
+  text-decoration: underline;
+}
+
+choice > * {
+  -oxy-display-tags: none;
+}
+
+choice > orig {
+  display: none;
+}

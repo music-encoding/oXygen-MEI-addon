@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serialized version="18.1" xml:space="preserve">
+  <map>
+    <entry>
+      <String>files.types.association.v12</String>
+      <fileTypeAssociation-array>
+        <fileTypeAssociation>
+          <field name="extension">
+            <String>mei</String>
+          </field>
+          <field name="contentType">
+            <String>text/xml</String>
+          </field>
+          <field name="defaultExtension">
+            <Boolean>false</Boolean>
+          </field>
+        </fileTypeAssociation>
+      </fileTypeAssociation-array>
+    </entry>
+  </map>
+</serialized>

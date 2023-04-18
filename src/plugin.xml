@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//Oxygen Plugin" "../plugin.dtd">
+<plugin 
+  id="de.bwbohl.oxygen-MEI-addon"
+  name="oXygen MEI addon 0.1.0-alpha"
+  description="The oXygen MEI addon adds the .mei File Type to the oXygen settings and provides oXygen Document Type Associations for various versions of the Music Encoding Initiative's (MEI) schemata for validation and transformation purposes."
+  version="0.1.0"
+  vendor="Benjamin W. Bohl"
+  class="ro.sync.exml.plugin.Plugin"
+  classLoaderType="preferReferencedResources">
+  <extension type="WorkspaceAccessJS" href="oXygen-options/wsAccess.js"/>
+</plugin>

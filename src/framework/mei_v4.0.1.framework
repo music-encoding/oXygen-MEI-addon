@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="18.1" xml:space="preserve">
+<serialized xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>MEI v4.0.0 anyStart</String>
+						<String>MEI v4.0.1</String>
 					</field>
 					<field name="schemaDescriptor">
 						<docTypeSchema>
@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/music-encoding/v4.0.0/schemata/mei-all_anyStart.rng</String>
+								<String>${framework}/music-encoding/v4.0.1/schemata/mei-all.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -33,7 +33,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/styles/4.0.0.css</String>
+											<String>${framework}/styles/v4/main.css</String>
 										</field>
 										<field name="title">
 											<String></String>
@@ -154,7 +154,7 @@
 					</field>
 					<field name="templatesLocations">
 						<String-array>
-							<String>${frameworkDir}/templates/v4.0.0</String>
+							<String>${frameworkDir}/templates/v4.0.1</String>
 						</String-array>
 					</field>
 					<field name="xmlCatalogs">
@@ -170,7 +170,7 @@
 									<String>http://www.music-encoding.org/ns/mei</String>
 								</field>
 								<field name="rootElem">
-									<String>*</String>
+									<String>mei</String>
 								</field>
 								<field name="fileName">
 									<String>*</String>
@@ -188,15 +188,15 @@
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>4.0.0</String>
+									<String>4.0.1</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
 								<field name="namespace">
-									<String>http://www.music-encoding.org/ns/mei</String>
+									<String>*</String>
 								</field>
 								<field name="rootElem">
-									<String>*</String>
+									<String>mei</String>
 								</field>
 								<field name="fileName">
 									<String>*.mei</String>
@@ -214,33 +214,7 @@
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>4.0.0</String>
-								</field>
-							</documentTypeRule>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*.mei</String>
-								</field>
-								<field name="publicID">
-									<String>*</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>meiversion</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>4.0.0</String>
+									<String>4.0.1</String>
 								</field>
 							</documentTypeRule>
 						</documentTypeRule-array>
@@ -292,7 +266,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/music-encoding/v4.0.0/schemata/mei-all_anyStart.rng</String>
+														<String>${framework}/music-encoding/v4.0.1/schemata/mei-all.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -303,14 +277,14 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI v 4.0.0 anyStart</String>
+									<String>MEI v4.0.1</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>MEI v 4.0.0 anyStart</String>
+							<String>MEI v4.0.1</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
@@ -356,6 +330,9 @@
 						<null/>
 					</field>
 					<field name="customAttributeValueEditor">
+						<null/>
+					</field>
+					<field name="textModeExternalObjectInsertionHandler">
 						<null/>
 					</field>
 				</documentTypeDescriptor>

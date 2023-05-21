@@ -158,6 +158,30 @@
     <copy file="${dest}/oXygen-MEI-addon.xml" todir="${dist.dir}/${revision}/"/>
   </target>
   
+  <target name="v4.0.1">
+    <!-- create assets directories -->
+    <mkdir dir="assets/music-encoding/v4.0.1/schemata/"/>
+    <mkdir dir="assets/music-encoding/v4.0.1/guidelines/"/>
+    <antcall target="git-checkout-master">
+      <param name="dir.path">submodules/music-encoding/</param>
+    </antcall>
+  <!--<exec executable="git" dir="submodules/music-encoding/">
+      <arg value="checkout"/>
+      <arg value="master"/>
+    </exec>-->
+    <exec executable="git" dir="submodules/music-encoding/">
+      <arg value="pull"/>
+    </exec>
+    <exec executable="git" dir="submodules/music-encoding/">
+      <arg value="checkout"/>
+      <arg value="tags/v4.0.1"/>
+    </exec>
+    <echo>Copy schemata:</echo>
+    <copy verbose="true" todir="assets/music-encoding/v4.0.1/schemata/">
+      <fileset dir="submodules/music-encoding/schemata/"></fileset>
+    </copy>
+  </target>
+  
   <target name="v4.0.0">
     <!-- create assets directories -->
     <mkdir dir="assets/music-encoding/v4.0.0/schemata/"/>
@@ -332,6 +356,7 @@
     <antcall target="v2.1.1"/>
     <antcall target="v3.0.0"/>
     <antcall target="v4.0.0"/>
+    <antcall target="v4.0.1"/>
   </target>
   
 </project>

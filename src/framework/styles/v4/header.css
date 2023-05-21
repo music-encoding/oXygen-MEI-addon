@@ -1,0 +1,614 @@
+@charset "UTF-8";
+@namespace oxy url(http://www.oxygenxml.com/extensions/author);
+@namespace mei url(http://www.music-encoding.org/ns/mei);
+/* global stuff */
+meiHead, meiHead > *, meiHead > * > *, meiHead > * > * > * {
+  display: block;
+  margin: 0.5em 0 !important;
+  padding: 0 0.5em !important;
+  -oxy-foldable: true;
+}
+
+meiHead:before, meiHead > *:before, meiHead > * > *:before {
+  display: block;
+  content: oxy_name(); /*TODO i18n */
+  border-bottom: 1px solid gray;
+  font-weight: 700;
+}
+
+meiHead {
+  -oxy-foldable: true;
+  border: 1px solid gray;
+}
+meiHead [label]:before {
+  -oxy-prepend-content: attr(label);
+  visibility: -oxy-collapse-text;
+}
+meiHead mei|title, meiHead mei|name {
+  display: block;
+  visibility: -oxy-collapse-text;
+  margin-left: 0.5em;
+}
+meiHead mei|title:before, meiHead mei|name:before {
+  content: oxy_label(text, oxy_concat(oxy_name(), oxy_attributes()), width, 100%) oxy_editor(type, text edit, "#text", width, 100%) !important;
+  margin: 0.5em 0 0 !important;
+}
+meiHead mei|titleStmt > mei|respStmt:before {
+  display: block;
+  content: oxy_name(); /*TODO i18n */
+  border-bottom: 1px solid gray;
+  font-weight: 700;
+}
+meiHead mei|titleStmt > mei|respStmt {
+  display: block;
+}
+/*meiHead > * {
+    border-top: 1px solid gray;
+}
+*/
+/*meiHead > fileDesc > *:before {
+  display: block;
+  content: "${i18n(pubStmt)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+/\*  background-color: #ffffff;*\/
+  padding: 0.5em;
+}*/
+/**
+/\* /global stuff *\/
+
+appInfo {
+  display:block;
+}
+
+appInfo:before {
+  content: "${i18n(appInfo)}";
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+application {
+  display: list-item;
+  margin: 0 0 0 0.5em !important;
+
+}
+
+application:after {
+  content: " (version" attr(version) ")";
+}
+
+availability {
+  display: block;
+}
+
+availability:before {
+  content: "${i18n(availability)}" ": ";
+  font-weight: bold;
+}
+
+captureMode {
+  display:block;
+}
+
+captureMode:before {
+  content: "${i18n(captureMode)}" ": ";
+  font-weight: bold;
+}
+
+carierForm {
+  display:block;
+}
+
+carierForm:before {
+  content: "${i18n(carierForm)}" ": ";
+  font-weight: bold;
+}
+
+condition {
+  display:block;
+}
+
+condition:before {
+  content: "${i18n(condition)}" ": ";
+  font-weight: bold;
+}
+
+dimensions {
+  display: block;
+}
+
+dimensions:before {
+  content: "${i18n(dimensions)}" ": ";
+  font-weight: bold;
+}
+
+dimensions[label]:before {
+  content: "${i18n(dimensions)}" ", " attr(label) ": ";
+  font-weight: bold;
+}
+
+dimensions[unit]:after {
+  content: " (" attr(unit) ")";
+}
+
+/\* change *\/
+revisionDesc > change[n] {
+  content: "${i18n(change)}" " " attr(n);
+}
+
+revisionDesc > change > respStmt {
+  display: inline-block;
+}
+
+revisionDesc > change > respStmt:before {
+  content: " by:";
+}
+/\* /change *\/
+
+/\*classCode {
+
+}*\/
+
+classification {
+  display:block;
+}
+
+classification:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(classification)}" ": ";
+}
+
+/\* itemList *\/
+itemList {
+  display:block;
+}
+
+itemList:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(itemList)}" ": ";
+}
+
+itemList > item {
+  display:block;
+  border: 1px solid #888888;
+  padding: 0.5em;
+}
+
+itemList > item:before {
+  display: block;
+  content: "${i18n(item)}" " " attr(xml|id) " (xml:id)";
+  margin: -0.5em -0.5em 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+itemList > item > * {
+  margin: 0.5em 0 0 0;
+} 
+/\* /itemList *\/
+
+langUsage > language:before {
+  font-weight: bold;
+  content:" " "${i18n(language)}" ": ";
+}
+
+physDesc:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(physDesc)}" ": ";
+}
+
+physLoc:before {
+  display:block;
+  font-weight: bold;
+  content: "${i18n(physLoc)}" ": ";
+}
+
+termList {
+  display: block;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+termList > term {
+  display: list-item;
+}
+
+termList > term:before {
+  content: attr(classcode);
+}
+
+termList > term > identifier {
+  display: inline-block;
+  font-style: italic;
+}
+
+termList > term > identifier:before {
+  content: none;
+}
+
+contents {
+  display: block;
+  -oxy-display-tags: none;
+}
+
+contents:before {
+  content: "${i18n(contents)}";
+}
+
+contents > contentItem {
+  display: list-item;
+  margin-left: 1em;
+}
+
+contents > contentItem[n] {
+  list-style: none;
+}
+
+contents > contentItem[n]:before {
+  content: attr(n) "  ";
+}
+
+/\* encodingDesc *\/
+meiHead > encodingDesc:before {
+  content: "${i18n(encodingDesc)}";
+}
+
+meiHead > encodingDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+/\* /encodingDesc *\/
+
+/\* extMeta *\/
+meiHead > extMeta:before {
+  content: "${i18n(extMeta)}";
+}
+
+meiHead > extMeta > * {
+  display: block;
+}
+/\* /extMeta *\/
+
+/\* fileDesc *\/
+/\*meiHead > fileDesc:before {
+  content: "${i18n(fileDesc)}";
+}*\/
+
+meiHead > fileDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+/\*fileDesc > pubStmt:before {
+  display: block;
+  content: "${i18n(pubStmt)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}*\/
+/\* /fileDesc *\/
+
+incip {
+  display: block;
+}
+
+incip:before {
+  content: "${i18n(incip)}" ": ";
+  font-weight: bold;
+}
+
+incip > score {
+  display:block;
+  content: "[" "${i18n(incip.score)}" "]";
+}
+
+incip > score * {
+  display: none;
+}
+
+/\*incipCode {
+  display: block;
+}*\/
+
+incipCode:before {
+  content: attr(form) ": ";
+  font-style: italic;
+}
+
+incipCode + incipCode:before {
+  content: "; " attr(form) ": ";
+}
+
+
+key {
+  display: block;
+}
+
+key:empty[pname][mode] {
+  content: attr(pname) "-" attr(mode);
+}
+
+key:before {
+  content: "${i18n(key)}" ": ";
+  font-weight: bold;
+}
+
+meiHead > * {
+  display:block;
+  margin: 1em 0;
+  width: 100%;
+  -oxy-display-tags: none;
+}
+
+meiHead > *:before {
+  display: block;
+  font-weight: bold;
+/\*  margin: 1em 0;*\/
+  content: oxy_name();
+  font-size: 1.2em;
+}
+
+meter:empty[count][unit] {
+  display: block;
+  content: attr(count) "/" attr(unit);
+}
+
+meter:before {
+  content: "${i18n(meter)}" ": ";
+  font-weight: bold;
+}
+
+/\* perfMedium *\/
+perfMedium {
+  display:block;
+}
+
+perfMedium:before {
+  content: "${i18n(perfMedium)}" ": ";
+  font-weight: bold;
+}
+
+perfResList {
+  display: block;
+  margin: 0 1em;
+}
+
+perfRes {
+  display: list-item;
+}
+
+perfRes[codedval]:after {
+  content: " (" attr(codedval) ")";
+}
+/\* /perfMedium *\/
+
+/\* physDesc *\/
+physDesc {
+  display: block;
+}
+
+physDesc:before {
+  display: block;
+}
+
+physDesc > titlePage {
+  display: block;
+}
+/\* /physDesc *\/
+
+provenance {
+  display:block;
+}
+
+provenance:before {
+  content: "${i18n(provenance)}" ": ";
+  font-weight: bold;
+}
+
+/\* pubStmt *\/
+pubStmt > date:before {
+  content: "${i18n(pubStmt.date)}" ": ";
+  font-weight: bold;
+}
+/\* /pubStmt *\/
+
+/\* revisionDesc *\/
+meiHead > revisionDesc:before {
+  content: "${i18n(revisionDesc)}";
+}
+
+meiHead > revisionDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+/\* /revisionDesc *\/
+
+/\* seriesStmt *\/
+seriesStmt {
+  display: block;
+}
+
+fileDesc > seriesStmt:before {
+  display: block;
+  content: "${i18n(seriesStmt)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+/\* source *\/
+source > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+/\* /source *\/
+
+/\* sourceDesc *\/
+sourceDesc {
+  display: block;
+}
+
+/\*sourceDesc:before {
+  display: block;
+  font-weight:bold;
+  content: "${i18n(sourceDesc)}";
+}*\/
+
+fileDesc > sourceDesc:before {
+  display: block;
+  content: "${i18n(sourceDesc)}";
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+/\* /sourceDesc *\/
+
+tempo {
+  display: block;
+}
+
+tempo:before {
+  content: "${i18n(tempo)}" ": ";
+  font-weight: bold;
+}
+
+respStmt > title:after {
+  content: ". ";
+}
+
+titleStmt {
+ display: block;  
+}
+
+fileDesc > titleStmt:before {
+  counter-increment: work-componentGrp;
+  content: "${i18n(titleStmt)}";
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+
+titleStmt > title:before {
+  content: "${i18n(title)}: ";
+  font-weight: bold;
+}
+
+titleStmt > title[type="uniform"] {
+  display:block;
+}
+
+titleStmt > title[type="uniform"]:before {
+  content: "${i18n(title.uniform)}: ";
+  font-weight: bold;
+}
+
+titleStmt > title[type="subordinate"]:before {
+  content: none;
+}
+
+titleStmt > title:after {
+  content: attr(type);
+}
+
+trackConfig {
+  display:block;
+}
+
+trackConfig:before {
+  content: "${i18n(trackConfig)}" ": ";
+  font-weight: bold;
+}
+
+treatHist {
+  display:block;
+}
+
+treatHist:before {
+  content: "${i18n(treatHist)}" ": ";
+  font-weight: bold;
+}
+
+treatSched {
+  display:block;
+}
+
+treatSched:before {
+  content: "${i18n(treatSched)}" ": ";
+  font-weight: bold;
+}
+
+watermark {
+  display:block;
+}
+
+watermark:before {
+  content: "${i18n(watermark)}" ": ";
+  font-weight: bold;
+}
+
+/\* work *\/
+work > * {
+  display:block;
+  margin: 0.5em 0 !important;
+}
+
+work > componentGrp {
+  counter-reset: work-componentGrp 0;
+}
+
+work > componentGrp:before {
+  content: "${i18n(work.componentGrp)}";
+  font-weight: bold;
+}
+
+work > componentGrp > work {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+
+work > componentGrp > work:before {
+  counter-increment: work-componentGrp;
+  content: "${i18n(work)}" " " counter(work-componentGrp, decimal);
+  display: block;
+  margin: -0.5em 0 0.5em -0.5em;
+  font-weight: bold;
+  background-color: #ffffff;
+  padding: 0.5em;
+}
+/\* /work *\/
+
+/\* workDesc *\/
+workDesc > * {
+  display: block;
+  margin: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #888888;
+  padding: 1em;
+}
+/\* /workDesc *\/
+*//*# sourceMappingURL=header.css.map */

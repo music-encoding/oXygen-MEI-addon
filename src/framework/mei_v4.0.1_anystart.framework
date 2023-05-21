@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>MEI v4.0.0 anyStart</String>
+						<String>MEI v4.0.1 anyStart</String>
 					</field>
 					<field name="schemaDescriptor">
 						<docTypeSchema>
@@ -17,7 +17,7 @@
 								<Integer>6</Integer>
 							</field>
 							<field name="uri">
-								<String>${framework}/music-encoding/v4.0.0/schemata/mei-all_anyStart.rng</String>
+								<String>${framework}/music-encoding/v4.0.1/schemata/mei-all_anyStart.rng</String>
 							</field>
 						</docTypeSchema>
 					</field>
@@ -33,7 +33,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/styles/4.0.0.css</String>
+											<String>${framework}/styles/4.0.1.css</String>
 										</field>
 										<field name="title">
 											<String></String>
@@ -154,7 +154,7 @@
 					</field>
 					<field name="templatesLocations">
 						<String-array>
-							<String>${frameworkDir}/templates/v4.0.0</String>
+							<String>${frameworkDir}/templates/v4.0.1</String>
 						</String-array>
 					</field>
 					<field name="xmlCatalogs">
@@ -188,7 +188,7 @@
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>4.0.0</String>
+									<String>4.0.1</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
@@ -214,7 +214,7 @@
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>4.0.0</String>
+									<String>4.0.1</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
@@ -240,7 +240,7 @@
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>4.0.0</String>
+									<String>4.0.1</String>
 								</field>
 							</documentTypeRule>
 						</documentTypeRule-array>
@@ -292,7 +292,7 @@
 														<Integer>6</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/music-encoding/v4.0.0/schemata/mei-all_anyStart.rng</String>
+														<String>${framework}/music-encoding/v4.0.1/schemata/mei-all_anyStart.rng</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -303,14 +303,14 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>MEI v 4.0.0 anyStart</String>
+									<String>MEI v 4.0.1 anyStart</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
 						<list>
-							<String>MEI v 4.0.0 anyStart</String>
+							<String>MEI v 4.0.1 anyStart</String>
 						</list>
 					</field>
 					<field name="defaultTransformationScenarios">

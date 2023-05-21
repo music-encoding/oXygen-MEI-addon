@@ -170,13 +170,13 @@
 									<String></String>
 								</field>
 								<field name="attributeLocalName">
-									<String>*</String>
+									<String>meiversion</String>
 								</field>
 								<field name="attributeNamespace">
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>*</String>
+									<String>3.0.0</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
@@ -196,13 +196,13 @@
 									<String></String>
 								</field>
 								<field name="attributeLocalName">
-									<String>*</String>
+									<String>meiversion</String>
 								</field>
 								<field name="attributeNamespace">
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>*</String>
+									<String>3.0.0</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
@@ -222,13 +222,13 @@
 									<String></String>
 								</field>
 								<field name="attributeLocalName">
-									<String>*</String>
+									<String>meiversion</String>
 								</field>
 								<field name="attributeNamespace">
 									<String>*</String>
 								</field>
 								<field name="attributeValue">
-									<String>*</String>
+									<String>3.0.0</String>
 								</field>
 							</documentTypeRule>
 						</documentTypeRule-array>

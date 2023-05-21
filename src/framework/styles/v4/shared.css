@@ -1,0 +1,129 @@
+address:before {
+/*  content: "${i18n(address)}";*/
+}
+
+addrLine {
+  display:block;
+  -oxy-display-tags: none;
+}
+
+body:before {
+  content: "${i18n(body)}";
+  font-weight: bold;
+}
+
+date:empty[isodate] {
+  content: attr(isodate);
+}
+
+date[notbefore][notafter] {
+  content: attr(notbefore) "~" attr(notafter);
+}
+
+identifier:before {
+  content: "${i18n(identifier)}" ": ";
+  font-weight: bold;
+}
+
+identifier {
+  display: block;
+}
+
+identifier[type]:after {
+  content: " (" attr(type) ")";
+}
+
+lb {
+  content: "\000A";
+  -oxy-display-tags : none;
+}
+
+mdiv {
+  display: block;
+  content: attr(label);
+  counter-reset: mdiv-measure 0;
+}
+
+mdiv scoreDef {
+  display: none;
+}
+
+mei:before {
+  content: "MEI v"attr(meiversion);
+}
+
+music:before {
+  content: "${i18n(music)}";
+  font-weight: bold;
+}
+
+music:empty {
+  display: none;
+}
+
+p {
+  display: block;
+  -oxy-display-tags: none;
+}
+
+pb {
+  content: "\000A" "[" "${i18n(pb)}" "]" "\000A";
+  -oxy-display-tags: none;
+}
+
+pb[n] {
+  content: "\000A" "[" "${i18n(pb)}" ". " attr(n) "]" "\000A";
+  -oxy-display-tags: none;
+}
+
+/* resp */
+resp:empty[codedval]:before {
+  content:  oxy_editor();
+}
+/* /resp */
+/* respStmt */
+respStmt > * + *:before {
+  content: "; ";
+}
+
+respStmt {
+ display: block;
+}
+
+respStmt:before {
+  content: "${i18n(respStmt)}" ": ";
+  font-weight: bold;
+}
+
+respStmt > resp {
+  font-weight: bold;
+}
+
+respStmt > resp:after {
+  content: ": ";
+}
+
+respStmt > persName[role]:after {
+  content: " (" attr(role) ")";
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+/* /respStmt */
+
+sb {
+  display: none;
+  /*content: "\000A";
+  -oxy-display-tags: none;*/
+}
+
+/* titlePage */
+titlePage:before {
+  content: "${i18n(titlePage)}" ": ";
+  font-weight: bold;
+  display: block;
+}
+
+titlePage > lb + * {
+  display: block;
+}
+/* /titlePage */

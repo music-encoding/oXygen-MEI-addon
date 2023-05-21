@@ -1,0 +1,26 @@
+facsimile {
+  counter-reset: facsimile-surface 0;
+}
+
+facsimile:before {
+  content: "${i18n(facsimile)}";
+  font-weight: bold;
+}
+
+surface {
+  counter-increment: facsimile-surface;
+  display:none;
+}
+
+surface:last-of-type {
+  content: counter(facsimile-surface, decimal) " " "${i18n(surfaces)}";
+  display: block;
+}
+
+surface graphic {
+  display: none;
+}
+
+ surface zone {
+  display: none;
+}

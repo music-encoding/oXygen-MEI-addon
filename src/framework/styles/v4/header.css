@@ -1,62 +1,46 @@
+@charset "UTF-8";
 @namespace oxy url(http://www.oxygenxml.com/extensions/author);
 @namespace mei url(http://www.music-encoding.org/ns/mei);
 /* global stuff */
-
 meiHead, meiHead > *, meiHead > * > *, meiHead > * > * > * {
-  display:block;
+  display: block;
   margin: 0.5em 0 !important;
   padding: 0 0.5em !important;
   -oxy-foldable: true;
 }
 
-meiHead:before, meiHead > *:before, meiHead > * >*:before {
-    display: block;
-    content: oxy_name();/*TODO i18n */
-    border-bottom: 1px solid gray;
-    font-weight: 700;
+meiHead:before, meiHead > *:before, meiHead > * > *:before {
+  display: block;
+  content: oxy_name(); /*TODO i18n */
+  border-bottom: 1px solid gray;
+  font-weight: 700;
 }
 
 meiHead {
-    -oxy-foldable: true;
-    border: 1px solid gray;
+  -oxy-foldable: true;
+  border: 1px solid gray;
 }
-
-[label]:before {
+meiHead [label]:before {
   -oxy-prepend-content: attr(label);
   visibility: -oxy-collapse-text;
 }
-
-mei|title, mei|name {
-    display: block;
-    visibility: -oxy-collapse-text;
-    margin-left: 0.5em;
+meiHead mei|title, meiHead mei|name {
+  display: block;
+  visibility: -oxy-collapse-text;
+  margin-left: 0.5em;
 }
-mei|title:before, mei|name:before {
-    content:
-            oxy_label(
-            text, oxy_concat(oxy_name(), oxy_attributes()),
-            width, 100%
-            )
-            oxy_editor(
-                type, text
-                edit, "#text",
-                width, 100%
-            )!important;
-    margin: 0.5em 0 0 !important;
+meiHead mei|title:before, meiHead mei|name:before {
+  content: oxy_label(text, oxy_concat(oxy_name(), oxy_attributes()), width, 100%) oxy_editor(type, text edit, "#text", width, 100%) !important;
+  margin: 0.5em 0 0 !important;
 }
-
-mei|titleStmt > mei|respStmt:before {
-    display: block;
-    content: oxy_name();/*TODO i18n */
-    border-bottom: 1px solid gray;
-    font-weight: 700;}
-
-mei|titleStmt > mei|respStmt {
-    display: block;
+meiHead mei|titleStmt > mei|respStmt:before {
+  display: block;
+  content: oxy_name(); /*TODO i18n */
+  border-bottom: 1px solid gray;
+  font-weight: 700;
 }
-
-mei|pubStmt > mei|unpub {
-    
+meiHead mei|titleStmt > mei|respStmt {
+  display: block;
 }
 /*meiHead > * {
     border-top: 1px solid gray;
@@ -70,7 +54,6 @@ mei|pubStmt > mei|unpub {
 /\*  background-color: #ffffff;*\/
   padding: 0.5em;
 }*/
-
 /**
 /\* /global stuff *\/
 
@@ -90,7 +73,7 @@ appInfo:before {
 application {
   display: list-item;
   margin: 0 0 0 0.5em !important;
-  
+
 }
 
 application:after {
@@ -166,7 +149,7 @@ revisionDesc > change > respStmt:before {
 /\* /change *\/
 
 /\*classCode {
-  
+
 }*\/
 
 classification {
@@ -628,4 +611,4 @@ workDesc > * {
   padding: 1em;
 }
 /\* /workDesc *\/
-*/
+*//*# sourceMappingURL=header.css.map */

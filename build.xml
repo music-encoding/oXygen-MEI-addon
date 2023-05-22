@@ -80,21 +80,21 @@
   </target>
   
   <target name="verovio-prepare" depends="verovio-copy-src, verovio-clean">
-    <exec dir="submodules/verovio/bindings/java/" executable="mvn">
+    <exec dir="submodules/verovio/bindings/java/" executable="mvn" failonerror="true">
       <arg value="package"/>
     </exec>
   </target>
   
   <target name="verovio-build" depends="verovio-prepare" >
-    <exec dir="submodules/verovio/bindings/java/" executable="mvn">
+    <exec dir="submodules/verovio/bindings/java/" executable="mvn" failonerror="true">
       <arg value="package"/>
     </exec>
   </target>
   
   <target name="verovio-compile" depends="verovio-build">
-    <exec dir="submodules/verovio/bindings/java/example-mei/" executable="javac">
+    <exec dir="submodules/verovio/bindings/java/example-mei/" executable="javac" failonerror="true">
       <arg line="-classpath" />
-      <arg value=".:../target/VerovioToolkit-2.0.0.jar"/>
+      <arg value=".:../target/VerovioToolkit-3.15.0.jar"/>
       <arg value="main.java"/>
     </exec>
   </target>

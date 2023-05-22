@@ -25,7 +25,7 @@ jobs:
         distribution: 'temurin'
     - name: Set env.version
       if: ${{ github.ref_name == 'develop' }}
-      run: echo "version=`git describe --tags --alwaysb HEAD`" >> $GITHUB_ENV
+      run: echo "version=$(git describe --tags --alwaysb HEAD)" >> $GITHUB_ENV
     - name: Echo env.version
       run: echo ${{ env.version }} 
     - name: Build with Ant

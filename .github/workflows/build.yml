@@ -33,6 +33,6 @@ jobs:
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v3
       with:
-        name: oXygen-MEI-addon-${{}}
+        name: oXygen-MEI-addon-${{ env.version }}
         path: dist/*/
         retention-days: 5

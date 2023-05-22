@@ -23,6 +23,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    - name: Set up swig
+      run: swig -version
     - name: Set env.version
       if: ${{ github.ref_name == 'develop' }}
       run: echo "version=$(git describe --tags --always HEAD)" >> $GITHUB_ENV

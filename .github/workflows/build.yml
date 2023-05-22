@@ -23,5 +23,16 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    - name: Set env.version
+      if: ${{ github.ref_name == 'develop' }}
+      run: echo "version=`git describe --tags --alwaysb HEAD`" >> $GITHUB_ENV
+    - name: Echo env.version
+      run: echo ${{ env.version }} 
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: oXygen-MEI-addon-${{}}
+        path: dist/*/
+        retention-days: 5

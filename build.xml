@@ -94,12 +94,12 @@
   <target name="verovio-compile" depends="verovio-build">
     <exec dir="submodules/verovio/bindings/java/example-mei/" executable="javac" failonerror="true">
       <arg line="-classpath" />
-      <arg value=".:../target/VerovioToolkit-3.15.0.jar"/>
+      <arg value=".:../target/VerovioToolkit-4.0.1.jar"/><?TODO variable verovio version ?>
       <arg value="main.java"/>
     </exec>
   </target>
   
-  <target name="dist" depends="clean,init,get-local-git-revision,load-license,verovio-compile">
+    <target name="dist" depends="clean,init,get-local-git-revision,load-license, verovio-compile">
     <antcall target="frameworks.init"/>
     <property name="zip" value="${name.short}_${revision}.zip"/>
     <property name="dest" value="${build.dir}/${name.short}"/>

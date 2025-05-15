@@ -10,3 +10,7 @@
 	path = submodules/schema
 	url = https://github.com/music-encoding/schema.git
 	branch = main
+[submodule "guidelines"]
+	path = submodules/guidelines
+	url = https://github.com/music-encoding/guidelines
+	branch = main

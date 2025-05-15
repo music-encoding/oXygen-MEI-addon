@@ -2,15 +2,15 @@
 	path = submodules/encoding-tools
 	url = https://github.com/music-encoding/encoding-tools
 	branch = master
-[submodule "submodules/mec-proceedings"]
-	path = submodules/mec-proceedings
-	url = https://github.com/music-encoding/mec-proceedings
-	branch = reorganise
 [submodule "submodules/verovio"]
 	path = submodules/verovio
 	url = https://github.com/rism-ch/verovio
 	branch = master
-[submodule "submodules/music-encoding"]
-	path = submodules/music-encoding
-	url = https://github.com/music-encoding/music-encoding
-	branch = master
+[submodule "schema"]
+	path = submodules/schema
+	url = https://github.com/music-encoding/schema.git
+	branch = main
+[submodule "guidelines"]
+	path = submodules/guidelines
+	url = https://github.com/music-encoding/guidelines.git
+	branch = main

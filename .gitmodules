@@ -12,5 +12,5 @@
 	branch = main
 [submodule "guidelines"]
 	path = submodules/guidelines
-	url = https://github.com/music-encoding/guidelines
+	url = https://github.com/music-encoding/guidelines.git
 	branch = main

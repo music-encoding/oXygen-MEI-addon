@@ -32,6 +32,20 @@
     <url>https://github.com/music-encoding/oXygen-MEI-addon</url>
   </scm>
 
+  <repositories>
+    <repository>
+      <id>public</id>
+      <name>oXygen public artifacts</name>
+      <url>https://www.oxygenxml.com/maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <!--<modules>
     <module>target/generated-sources/verovio</module>
   </modules>-->

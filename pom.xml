@@ -12,6 +12,16 @@
 
   <packaging>pom</packaging>
 
+  <developers>
+    <developer>
+      <name>Benjamin W. Bohl</name>
+      <email>b.w.bohl@gmail.com</email>
+      <roles>
+        <role>manager</role>
+      </roles>
+    </developer>
+  </developers>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>

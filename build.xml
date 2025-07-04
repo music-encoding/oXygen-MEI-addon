@@ -79,7 +79,7 @@
     <delete file="submodules/verovio/bindings/java/example-mei/main.class"/>
   </target>
   
-  <target name="verovio-prepare" depends="verovio-copy-src, verovio-clean">
+  <target name="verovio-prepare" depends="verovio-clean, verovio-copy-src">
     <exec dir="submodules/verovio/bindings/java/" executable="mvn">
       <arg value="package"/>
     </exec>

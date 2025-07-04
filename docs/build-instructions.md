@@ -23,11 +23,19 @@ Moreover make sure, the following prerequisites are met by your system:
 
 ## The Build Process
 
-Building the oXygen-MEI-Addon is based on Apache Ant. In order to build, run the following command:
+Building the oXygen-MEI-Addon is based on Apache Maven. In order to build, run the following command:
 
 ```shell
-ant
+mvn compile
 ```
+
+All build artifacts will be created in the `target` directory. The following steps will be executed:
+
+1. copy-resources
+  * *copy-verovio-submodule* will copies `submodules/verovio` to `target/generated-sources/verovio`
+  * *copy-verovio-src* copies `src/verovio` to `target/generated-sources/verovio/bindings/java/example-mei`
+  * *copy-schema* copies `submodules/schema` to `target/extra-resources/schema`
+  * *compile-verovio*
 
 This tasks launches several subtasks:
 

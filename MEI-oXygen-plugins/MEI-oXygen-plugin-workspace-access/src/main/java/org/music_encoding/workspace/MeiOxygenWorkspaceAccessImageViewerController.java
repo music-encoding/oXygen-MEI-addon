@@ -1,6 +1,6 @@
-package org.music_encoding.oxygen.plugin;
+package org.music_encoding.workspace;
 
-import org.music_encoding.oxygen.plugin.SvgViewerPanel;
+// import the correct package for MeiOxygenWorkspaceAccessSvgViewerPanel
 import ro.sync.exml.workspace.api.standalone.StandalonePluginWorkspace;
 import ro.sync.exml.workspace.api.editor.WSEditor;
 
@@ -8,14 +8,14 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Controller for keeping the SVG viewer in sync with the current MEI file.
+ * Controller for keeping the MeiOxygenWorkspaceAccess viewer in sync with the current MEI file.
  */
-public class ImageController {
-    private final SvgViewerPanel svgViewerPanel;
+public class MeiOxygenWorkspaceAccessImageViewerController {
+    private final MeiOxygenWorkspaceAccessSvgViewerPanel MeiOxygenWorkspaceAccessSvgViewerPanel;
     private StandalonePluginWorkspace pluginWorkspaceAccess;
 
-    public ImageController(SvgViewerPanel svgViewerPanel) {
-        this.svgViewerPanel = svgViewerPanel;
+    public MeiOxygenWorkspaceAccessImageViewerController(MeiOxygenWorkspaceAccessSvgViewerPanel MeiOxygenWorkspaceAccessSvgViewerPanel) {
+        this.MeiOxygenWorkspaceAccessSvgViewerPanel = MeiOxygenWorkspaceAccessSvgViewerPanel;
     }
 
     public void init(StandalonePluginWorkspace pluginWorkspaceAccess) {
@@ -23,8 +23,8 @@ public class ImageController {
     }
 
     /**
-     * Render the current MEI file as SVG and display it.
-     * This is a stub: replace with your actual MEI-to-SVG rendering logic.
+     * Render the current MEI file as MeiOxygenWorkspaceAccess and display it.
+     * This is a stub: replace with your actual MEI-to-MeiOxygenWorkspaceAccess rendering logic.
      */
     public void renderCurrentFile() throws IOException {
         if (pluginWorkspaceAccess == null) return;
@@ -45,10 +45,10 @@ public class ImageController {
                     if ("http://www.music-encoding.org/ns/mei".equals(rootNamespace)) {
                         File meiFile = new File(currentFilePath);
                         // TODO: Replace this with actual Verovio rendering logic
-                        // For demonstration, assume SVG is at the same path with .svg extension
-                        File svgFile = new File(meiFile.getParentFile(), meiFile.getName().replaceAll("\\.mei$", ".svg"));
-                        // Load SVG into the viewer panel
-                        svgViewerPanel.loadSvg(svgFile);
+                        // For demonstration, assume MeiOxygenWorkspaceAccess is at the same path with .MeiOxygenWorkspaceAccess extension
+                        File file = new File(meiFile.getParentFile(), meiFile.getName().replaceAll("\\.mei$", ".MeiOxygenWorkspaceAccess"));
+                        // Load MeiOxygenWorkspaceAccess into the viewer panel
+                        //MeiOxygenWorkspaceAccessSvgViewerPanel.loadFile(file);
                     } else {
                         throw new IOException("The current file is not a valid MEI file.");
                     }

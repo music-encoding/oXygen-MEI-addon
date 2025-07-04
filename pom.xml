@@ -101,7 +101,20 @@
       <version>1.16</version>
     </dependency>
   </dependencies>
-
+  <!-- Choose the Java compiler according to the platform. -->
+  <profiles>
+    <profile>
+      <id>win</id>
+      <activation>
+        <os>
+          <family>Windows</family>
+        </os>
+      </activation>
+      <properties>
+        <javac.path>${env.JAVA_HOME}\bin\javac.exe</javac.path>
+      </properties>
+    </profile>
+  </profiles>
   <build>
       <plugins>
           <plugin>

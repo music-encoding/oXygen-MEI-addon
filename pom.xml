@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.music-encoding</groupId>
-  <artifactId>oXygen-MEI-addon</artifactId>
+  <groupId>org.music_encoding</groupId>
+  <artifactId>MEI-oXygen</artifactId>
   <version>1.0.0-develop</version>
   <packaging>pom</packaging>
-  <name>oXygen-MEI-addon</name>
+  <name>MEI-oXygen</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://www.music-encoding.org</url>
 
-  <description>A MEI oXygen addon.</description>
+  <description>MEI oXygen additions.</description>
  
   <developers>
     <developer>
@@ -26,7 +26,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <oxygen.sdk.version>27.1.0.2</oxygen.sdk.version>
     <javac.path>${env.JAVA_HOME}/bin/javac</javac.path>
-    <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
   <scm>
@@ -42,28 +41,7 @@
     </repository>
   </repositories>
 
-  <!--<modules>
-    <module>target/generated-sources/verovio/bindings/java</module>
-  </modules>-->
-
-  <!--<dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>5.11.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>3.1.0</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>-->
-
-  <dependencies>
 
     <dependency>
       <groupId>com.oxygenxml</groupId>
@@ -372,5 +350,9 @@
 
 
   </build>
+    
+    <modules>
+        <module>MEI-oXygen-plugins</module>
+    </modules>
 
 </project>

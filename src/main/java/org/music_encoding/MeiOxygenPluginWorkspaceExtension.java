@@ -1,4 +1,8 @@
-package org.music_encoding.workspace.extension;
+package org.music_encoding.oxygen.plugin;
+
+import org.music_encoding.oxygen.plugin.MeiOxygenPlugin;
+import org.music_encoding.oxygen.plugin.SvgViewerPanel;
+import org.music_encoding.oxygen.plugin.ImageController;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
@@ -26,7 +30,7 @@ import ro.sync.exml.workspace.api.standalone.ViewComponentCustomizer;
 import ro.sync.exml.workspace.api.standalone.ViewInfo;
 import ro.sync.exml.workspace.api.standalone.ui.ToolbarButton;
 import ro.sync.util.URLUtil;
-
+import ro.sync.exml.workspace.api.editor.WSEditor;
 /**
  * A oXygen workspace access extension that adds a custom view.
  * This view can render the current MEI file as verovio SVG.
@@ -34,8 +38,6 @@ import ro.sync.util.URLUtil;
  * @author Benjamin W. Bohl
  */
 public class MeiOxygenPluginWorkspaceExtension implements WorkspaceAccessPluginExtension {
-
-    private static final long serialVersionUID = 1L;
 
     /**
      * A toolbar that adds a button to render the current file with verovio.
@@ -65,12 +67,12 @@ public class MeiOxygenPluginWorkspaceExtension implements WorkspaceAccessPluginE
      * The panel will be used to display the rendered SVG in the custom view.
      * The panel will be used to display the SVG in the custom view.
      */
-    private ImageViewerPanel verovioViewPanel = new ImageViewerPanel();
+    private SvgViewerPanel verovioViewPanel = new SvgViewerPanel();
 
     /**
      * Controller for keeping the verovio image viewer in sync with the current MEI file.
      */
-    private VerovioImageViewerController verovioImageViewerController = new VerovioImageViewerController(verovioViewPanel);
+    private ImageController verovioImageViewerController = new ImageController(verovioViewPanel);
 
   /**
    * @see ro.sync.exml.plugin.workspace.WorkspaceAccessPluginExtension#applicationStarted(ro.sync.exml.workspace.api.standalone.StandalonePluginWorkspace)
@@ -85,7 +87,7 @@ public class MeiOxygenPluginWorkspaceExtension implements WorkspaceAccessPluginE
        */
       @Override
       public void customizeView(ViewInfo viewInfo) {
-        if (viewInfo.getViewID().equals(org.music_encoding.workspace.view.MeiVerovioView.VIEW_ID)) {
+        if (viewInfo.getViewID().equals(SvgViewerPanel.IMAGE_VIEWER_ID)) {
           // Set the custom view panel as the content of the view
           JPanel jPanel = new JPanel(new BorderLayout());
 
@@ -113,46 +115,36 @@ public class MeiOxygenPluginWorkspaceExtension implements WorkspaceAccessPluginE
       }
     });
 
-    pluginWorkspaceAccess.addToolbarComponentCustomizer(new ToolbarComponentsCustomizer() {
+    pluginWorkspaceAccess.addToolbarComponentsCustomizer(new ToolbarComponentsCustomizer() {
+
       @Override
-      public void customizeToolbarComponents(ToolbarInfo toolbarInfo) {
-        if (toolbarInfo.getId().equals(TOOLBAR_ID)) {
-          // Add the custom view to the toolbar
-          Action openCurrentAction = new AbstractAction("MEI verovio View", e -> {
-            private static final long serialVersionUID = 2L;
+      public void customizeToolbar(ToolbarInfo toolbarInfo) {
+        if (toolbarInfo.getToolbarID().equals(TOOLBAR_ID)) {
+          Action openCurrentAction = new AbstractAction() {
+            private static final long serialVersionUID = -3361572441178434523L;
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-              // Show the custom view when the action is triggered
-              //pluginWorkspaceAccess.getViewManager().showView(org.music_encoding.workspace.view.MeiVerovioView.VIEW_ID);
-              PluginDescriptor descriptor = MeiOxygenPlugin.getInstance.getDescriptor();
-              // Get the current file from the plugin workspace
-              String currentFilePath = pluginWorkspace.getCurrentEditorLocation();
-              File file = ro.sync.util.editorvars.CURRENT_FILE;
+              //PluginDescriptor descriptor = MeiOxygenPlugin.getInstance().getDescriptor();
 
-              try {
-                boolean open = pluginWorkspaceAccess.open(ro.sync.util.editorvars.CURRENT_FILE);
-                if (open) {
-                    pluginWorkspaceAccess.getViewManager().showView(org.music_encoding.workspace.view.MeiVerovioView.VIEW_ID, false);
-                    URL fileURL = new URL("file", null, currentFilePath);
-                  pluginWorkspaceAccess.getViewManager().showView(org.music_encoding.workspace.view.MeiVerovioView.VIEW_ID, fileURL);
+              WSEditor editorAccess = pluginWorkspaceAccess.getCurrentEditorAccess(StandalonePluginWorkspace.MAIN_EDITING_AREA);
+              if (editorAccess != null) {
+                // Get the current file path from the editor access
+                String currentFilePath = editorAccess.getEditorLocation() != null ? editorAccess.getEditorLocation().toString() : null;
+
+                if (currentFilePath != null) {
+
+                  // Render the current MEI file as verovio SVG
+                  //verovioImageViewerController.renderCurrentFile(currentFilePath);
+                  // echo currentFilePath in dialog
+                  pluginWorkspaceAccess.showInformationMessage("Current MEI file path: " + currentFilePath);
+
                 }
-
-              } catch (MalformedURLException e1) {
-                pluginWorkspaceAccess.showErrorMessage("Invalid file URL: " + e1.getMessage(), e1);
-              } catch (IOException e) {
-                e.printStackTrace();
-              } catch (XPathException e) {
-                e.printStackTrace();
               }
             }
           };
-          //viewAction.setIcon(URLUtil.getResourceURL(PluginDescriptor.class, "mei-verovio-icon.png"));
-          //viewAction.setToolTipText("Open the MEI verovio view to render the current MEI file.");
-          //toolbarInfo.addAction(viewAction);
-          ToolbarButton verovioButton = new ToolbarButton(openSampleAction, true);
+          ToolbarButton verovioButton = new ToolbarButton(openCurrentAction, true);
           verovioButton.setText("MEI Verovio View");
-
           toolbarInfo.setComponents(new JComponent[] {verovioButton});
         }
       }
@@ -165,7 +157,7 @@ public class MeiOxygenPluginWorkspaceExtension implements WorkspaceAccessPluginE
   /* public MeiOxygenPluginWorkspaceExtension() {
     super();
     // Register the custom view
-    registerView(new org.music_encoding.workspace.view.MeiverovioView());
+    registerView(new org.music_encoding.oxygen.plugin.view.MeiverovioView());
   } */
 
   @Override

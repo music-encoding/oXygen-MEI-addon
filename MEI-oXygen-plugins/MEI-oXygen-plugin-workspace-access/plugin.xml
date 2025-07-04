@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin.dtd file is located in the OXYGEN_INSATALL_DIR/plugins directory -->
+<!DOCTYPE plugin SYSTEM "../plugin.dtd">
+
+<plugin
+ id="org.music_encoding.plugin.WorkspaceAccess"
+ name="MEI oXygen WorkspaceAccess"
+ description="Test"
+ version="${project.nosnapshot.version}"
+ vendor="Music Encoding Initiative"
+ class="org.music_encoding.workspace.WorkspaceAccessPlugin"
+ classLoaderType="preferReferencedResources">
+ <runtime>
+        <library name="lib/${project.build.finalName}.jar"/>
+ </runtime>
+
+ <extension type="WorkspaceAccess"
+  class="org.music_encoding.workspace.CustomWorkspaceAccessPluginExtension"/>
+ <extension type="OptionPage" class="org.music_encoding.workspace.CustomWorkspaceAccessOptionPagePluginExtension"></extension>
+
+  <!--The sample view which will present messages from the sample plugin.-->
+  <view id="SampleWorkspaceAccessID" initialSide="EAST" initialRow="0"/>
+  <!--The sample toolbar which will present messages from the sample plugin.-->
+  <toolbar id="SampleWorkspaceAccessToolbarID" initialSide="NORTH" initialRow="1"/>
+</plugin>

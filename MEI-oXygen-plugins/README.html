@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>oXygen Sample Plugins</title>
+  </head>
+  <body>  
+    <h1>Sample plugins for oXygen standalone distribution</h1>
+    <section>
+      <h2>The contents of this project</h2>
+      <p>There are several categories of oXygen plugins:</p>
+      <p>Plugins that process the current text selection from the Text mode:</p>
+      <ul>
+        <li><a href="oxygen-sample-plugin-capitalize-lines/README.html"
+            >oxygen-sample-plugin-capitalize-lines</a></li>
+        <li><a href="oxygen-sample-plugin-conversion/README.html"
+            >oxygen-sample-plugin-conversion</a></li>
+        <li><a href="oxygen-sample-plugin-format-preserve-text/README.html"
+            >oxygen-sample-plugin-format-preserve-text</a></li>
+        <li><a href="oxygen-sample-plugin-formsentences/README.html"
+            >oxygen-sample-plugin-formsentences</a></li>
+        <li><a href="oxygen-sample-plugin-formwords/README.html"
+          >oxygen-sample-plugin-formwords</a></li>
+        <li><a href="oxygen-sample-plugin-lowercase/README.html"
+          >oxygen-sample-plugin-lowercase</a></li>
+        <li><a href="oxygen-sample-plugin-uppercase/README.html"
+          >oxygen-sample-plugin-uppercase</a></li>
+        <li><a href="oxygen-sample-plugin-zeroindent/README.html"
+            >oxygen-sample-plugin-zeroindent</a></li>
+      </ul>
+      <p>Plugins that access the oXygen IDE (internal file editors, pages, Author mode document
+        object model, toolbars, menu items, etc..):</p>
+      <ul>
+        <li><a href="oxygen-sample-plugin-workspace-access/README.html"
+            >oxygen-sample-plugin-workspace-access</a></li>
+        <li><a href="oxygen-sample-plugin-components-validator/README.html">oxygen-plugin-startup</a></li>
+      </ul>
+      <p>Plugin that accesses the oXygen options:</p>
+      <ul>
+        <li><a href="oxygen-sample-plugin-impose-options/README.html"
+          >oxygen-sample-plugin-impose-options</a></li>
+      </ul>
+      <p>Plugin that suply an external transfomer for XSLT of XQuery:</p>
+      <ul>
+        <li><a href="oxygen-sample-plugin-tranformer_saxon_9_7/README.html"
+          >oxygen-sample-plugin-impose-options</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Build and deployment</h2>
+      <p><b>Note:</b>To build the entire set of plugins into a single archive use the project: <a
+          href="../bundle-plugins/README.html">bundle-plugins</a>. You need to 
+          run the following command in the main project's directory:</p>
+      <pre>
+ mvn -pl bundle-plugins -am install
+</pre>
+      <p>The .zip file is built in the <code>target/</code> directory.</p>
+      <p>To deploy it, you can unarchive the file in an 
+        oXygen installation plugins folder by running the following command 
+        in the main project's directory:</p>
+      <pre>
+  mvn -pl bundle-plugins -am deploy          
+</pre>
+      
+      <h2>Automatic deployment into an Oxygen instance</h2>
+      <p>The following command will both pack the plugin and copy it inside the <b>plugins</b>
+        folder of an an oXygen instance:</p>
+      <pre>mvn install -Doxygen.plugins.dir="D:\OxygenInstallDir\plugins"</pre>
+      <p>This command is particular useful when you need to repeatably make changes in a plugin and
+        afterwards deploy it and test it in an Oxygen instance.</p>
+    </section>
+    
+  </body>
+</html>

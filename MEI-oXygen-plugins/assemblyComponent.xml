@@ -1,0 +1,56 @@
+<component>
+	<fileSets>
+		<fileSet>
+			<directory>etc</directory>
+			<outputDirectory>/etc</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>web</directory>
+			<outputDirectory>/web</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+	<files>
+		<file>
+			<source>target/build/${project.build.finalName}.jar</source>
+			<outputDirectory>/lib</outputDirectory>
+		</file>
+		<file>
+			<source>plugin.xml</source>
+			<outputDirectory>/</outputDirectory>
+			<filtered>true</filtered>
+		</file>
+		<file>
+			<source>README.html</source>
+			<outputDirectory>/</outputDirectory>
+		</file>
+		<file>
+			<source>extension.xml</source>
+			<outputDirectory>/</outputDirectory>
+			<filtered>true</filtered>
+		</file>
+	</files>
+
+
+	<!-- In case one of your plugins needs to package its dependencies, use a section like the one below. -->
+	<!-- 
+	<dependencySets>
+	    <dependencySet>
+	        <unpack>false</unpack>
+	        <scope>runtime</scope>
+	        <outputDirectory>/lib</outputDirectory>
+	        <useProjectArtifact>false</useProjectArtifact>
+	        <includes>
+	            <include>com.comp:library-1</include>
+	            <include>com.comp:library-2</include>	            
+	        </includes>
+	    </dependencySet>
+	</dependencySets>	
+	 -->
+</component>

@@ -5,13 +5,13 @@
   <groupId>org.music-encoding</groupId>
   <artifactId>oXygen-MEI-addon</artifactId>
   <version>1.0.0-develop</version>
-
+  <packaging>pom</packaging>
   <name>oXygen-MEI-addon</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
-  <packaging>pom</packaging>
-
+  <description>A MEI oXygen addon.</description>
+ 
   <developers>
     <developer>
       <name>Benjamin W. Bohl</name>
@@ -24,6 +24,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <oxygen.sdk.version>27.1.0.2</oxygen.sdk.version>
+    <javac.path>${env.JAVA_HOME}/bin/javac</javac.path>
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
@@ -34,23 +36,17 @@
 
   <repositories>
     <repository>
-      <id>public</id>
-      <name>oXygen public artifacts</name>
-      <url>https://www.oxygenxml.com/maven</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
+      <id>oxygenxml</id>
+      <name>oXygen XML SDK Maven Repository</name>
+      <url>https://oxygenxml.com/maven/</url>
     </repository>
   </repositories>
 
   <!--<modules>
-    <module>target/generated-sources/verovio</module>
+    <module>target/generated-sources/verovio/bindings/java</module>
   </modules>-->
 
-  <dependencyManagement>
+  <!--<dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.junit</groupId>
@@ -65,34 +61,89 @@
         <version>3.1.0</version>
       </dependency>
     </dependencies>
-  </dependencyManagement>
+  </dependencyManagement>-->
 
   <dependencies>
+
     <dependency>
       <groupId>com.oxygenxml</groupId>
       <artifactId>oxygen-sdk</artifactId>
-      <version>27.0.0.1</version>
+      <version>${oxygen.sdk.version}</version>
     </dependency>
+    <!-- If you need MathFlow rendering, the best is to import the MathFlow 
+			SDK jars as artifacts in your Maven repository and add dependencies here. -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>3.8</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+      
+<!--    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- Optionally: parameterized tests support -->
+    <!-\- Optionally: parameterized tests support -\->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
+    </dependency>-->
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-swing</artifactId>
+      <version>1.16</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-dom</artifactId>
+      <version>1.16</version>
     </dependency>
   </dependencies>
 
   <build>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-enforcer-plugin</artifactId>
+              <version>1.4.1</version>
+              <executions>
+                  <execution>
+                      <id>enforce-files-exist</id>
+                      <goals>
+                          <goal>enforce</goal>
+                      </goals>
+                      <configuration>
+                          <rules>
+                              <requireFilesExist>
+                                  <files>
+                                      <file>${javac.path}</file>
+                                  </files>
+                                  <message>You must set the JAVA_HOME environment
+                                      variable to point to a JDK installation.</message>
+                              </requireFilesExist>
+                          </rules>
+                          <fail>true</fail>
+                      </configuration>
+                  </execution>
+              </executions>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.1</version>
+              <configuration>
+                  <fork>true</fork>
+                  <executable>${javac.path}</executable>
+                  <compilerVersion>1.8</compilerVersion>
+                  <source>1.8</source>
+                  <target>1.8</target>
+                  <debug>true</debug>
+              </configuration>
+          </plugin>
+      </plugins>
+
     <pluginManagement>
       <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -108,6 +159,27 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
           <executions>
+
+            <execution>
+              <id>copy-fameworks</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>target/generated-sources/verovio</outputDirectory>
+                <resources>
+                  <resource>
+                    <directory>submodules/verovio</directory>
+                    <excludes>
+                      <exclude>java/example-mei/main.java</exclude>
+                      <exclude>java/example-pae/**</exclude>
+                    </excludes>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
+
             <execution>
               <id>copy-verovio-submodule</id>
               <phase>generate-sources</phase>
@@ -166,9 +238,32 @@
                 </resources>
               </configuration>
             </execution>
+
+            <!-- guidelines -->
+            <execution>
+              <id>copy-guidelines</id>
+              <phase>process-resources</phase>
+              <goals>
+                <goal>copy-resources</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>target/extra-resources/guidelines</outputDirectory>
+                <resources>
+                  <resource>
+                    <directory>submodules/guidelines</directory>
+                    <includes>
+                      <include>**/*.pdf</include>
+                      <include>**/*.rng</include>
+                      <include>**/*.xml</include>
+                      <include>**/*.xsd</include>
+                    </includes>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
           </executions>
         </plugin>
-        
+
         <!-- verovio -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -180,9 +275,14 @@
                 <goal>compile</goal>
               </goals>
               <configuration>
-                  <source>8</source>
-                  <target>8</target>
-                </configuration>
+                <source>8</source>
+                <target>8</target>
+                <!--<project>
+                  <modules>
+                    <module>target/generated-sources/verovio</module>
+                  </modules>
+                </project>-->
+              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -225,7 +325,7 @@
               </goals>
               <configuration>
                 <executable>maven</executable>
-                <workingDirectory>/target/generated-sources/verovio</workingDirectory>
+                <workingDirectory>/target/generated-sources/verovio/bindings/java</workingDirectory>
                 <arguments>
                   <argument>package</argument>
                 </arguments>
@@ -239,7 +339,7 @@
               </goals>
               <configuration>
                 <executable>mvn</executable>
-                <workingDirectory>/target/generated-sources/verovio</workingDirectory>
+                <workingDirectory>/target/generated-sources/verovio/bindins/java</workingDirectory>
                 <arguments>
                   <argument>package</argument>
                 </arguments>
@@ -254,17 +354,7 @@
 
     </pluginManagement>
 
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-      </plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-    </plugins>
 
 
 

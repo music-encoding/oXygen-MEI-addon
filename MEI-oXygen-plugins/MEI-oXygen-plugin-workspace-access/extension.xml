@@ -8,7 +8,6 @@
     <xt:name>WorkspaceAccess</xt:name>
     <xt:description><html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <title>Sample Workspace Access plugin</title>
                 <title>MEI oXygen Workspace Access plugin</title>
             </head>
             <body>

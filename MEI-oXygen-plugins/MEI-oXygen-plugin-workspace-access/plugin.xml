@@ -8,15 +8,15 @@
  description="Test"
  version="${project.nosnapshot.version}"
  vendor="Music Encoding Initiative"
- class="org.music_encoding.workspace.WorkspaceAccessPlugin"
+ class="org.music_encoding.workspace.MeiOxygenWorkspaceAccessPlugin"
  classLoaderType="preferReferencedResources">
  <runtime>
         <library name="lib/${project.build.finalName}.jar"/>
  </runtime>
 
  <extension type="WorkspaceAccess"
-  class="org.music_encoding.workspace.CustomWorkspaceAccessPluginExtension"/>
- <extension type="OptionPage" class="org.music_encoding.workspace.CustomWorkspaceAccessOptionPagePluginExtension"></extension>
+  class="org.music_encoding.workspace.MeiOxygenWorkspaceAccessPluginExtension"/>
+ <!--<extension type="OptionPage" class="org.music_encoding.workspace.MeiOxygenWorkspaceAccessOptionPagePluginExtension"></extension>-->
 
   <!--The sample view which will present messages from the sample plugin.-->
   <view id="SampleWorkspaceAccessID" initialSide="EAST" initialRow="0"/>

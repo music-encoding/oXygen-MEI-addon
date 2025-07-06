@@ -352,6 +352,7 @@
   </build>
     
     <modules>
+        <module>bundle-plugins</module>
         <module>MEI-oXygen-plugins</module>
     </modules>
 

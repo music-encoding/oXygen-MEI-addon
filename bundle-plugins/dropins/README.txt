@@ -1,0 +1,1 @@
+Place already existing plugins inside this folder.

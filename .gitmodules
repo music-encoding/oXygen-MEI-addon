@@ -2,7 +2,7 @@
 	path = submodules/encoding-tools
 	url = https://github.com/music-encoding/encoding-tools
 	branch = master
-[submodule "submodules/verovio"]
+[submodule "MEI-oXygen-plugins/verovio"]
 	path = MEI-oXygen-plugins/verovio
 	url = https://github.com/rism-ch/verovio
 	branch = master

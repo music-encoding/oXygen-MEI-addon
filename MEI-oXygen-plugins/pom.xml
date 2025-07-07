@@ -163,5 +163,6 @@
   </profiles>
   <modules>
     <module>MEI-oXygen-plugin-workspace-access</module>
+    <module>verovio/bindings/java</module>
   </modules>
 </project>

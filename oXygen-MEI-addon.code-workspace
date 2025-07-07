@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"liveSassCompile.settings.autoprefix": [],
-		"savePath": "build/oXygen-MEI-addon/styles/"
+		"savePath": "build/oXygen-MEI-addon/styles/",
+		"java.configuration.updateBuildConfiguration": "interactive"
 	}
 }
